@@ -68,7 +68,7 @@ export default function Footer() {
                 */}
                 <div className="border-t border-gray-700 mt-10 pt-8 text-center text-sm">
                     <p>
-                        &copy; {new Date().getFullYear()} FC Flooring. Todos os direitos reservados.
+                        &copy; {new Date().getFullYear()} Barros Bouw. Todos os direitos reservados.
                     </p>
                     <p className="mt-1 text-xs">
                         Clone de site feito para fins educacionais.

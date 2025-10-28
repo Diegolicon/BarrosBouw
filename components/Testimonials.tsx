@@ -24,12 +24,12 @@ const testimonialsData = [
     {
         id: 1,
         name: "Ana S.",
-        review: "Tive uma excelente experiência com a FC Flooring! O piso ficou perfeito e a instalação foi eficiente, tudo de primeira qualidade. A equipe foi profissional, detalhista e deixou a casa impecável."
+        review: "Tive uma excelente experiência com a Barros Bouw! O piso ficou perfeito e a instalação foi eficiente, tudo de primeira qualidade. A equipe foi profissional, detalhista e deixou a casa impecável."
     },
     {
         id: 2,
         name: "Carlos M.",
-        review: "Trabalho incrível da FC Flooring. O novo piso parece fantástico. Mal posso esperar para usá-los novamente em nosso próximo projeto. Altamente recomendado!"
+        review: "Trabalho incrível da Barros Bouw. O novo piso parece fantástico. Mal posso esperar para usá-los novamente em nosso próximo projeto. Altamente recomendado!"
     }
     // Você pode adicionar mais depoimentos aqui...
 ];
@@ -49,7 +49,7 @@ export default function Testimonials() {
                         Barros Bouw
                     </h2>
                     <p className="text-lg text-gray-300 mb-12 max-w-xl mx-auto">
-                        Na FC Flooring, nos dedicamos a transformar sua visão em realidade.
+                        Na Barros Bouw, nos dedicamos a transformar sua visão em realidade.
                         Oferecemos soluções customizadas que combinam qualidade, durabilidade e design.
                     </p>
                     

@@ -28,7 +28,7 @@ export default function Hero() {
 
                 {/* Subtítulo / Slogan */}
                 <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
-                    Na FC Flooring, nos dedicamos a transformar sua visão em realidade.
+                    Na Barros Bouw, nos dedicamos a transformar sua visão em realidade.
                     Oferecemos soluções customizadas que combinam qualidade, durabilidade e design.
                 </p>
 
