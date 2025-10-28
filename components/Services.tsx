@@ -8,11 +8,12 @@
  * - Um parágrafo de introdução
  * - Uma grade (grid) que contém 3 cards.
  * - Cada card tem um ícone, um título e uma descrição.
+ *
+ * MODIFICAÇÃO: Adicionado o atributo 'data-aos' para animação de rolagem (Scroll Reveal).
 */
 
 // --- ÍCONE ---
 // Um componente de ícone SVG simples para usar nos cards.
-// No site original, eles usam ícones customizados.
 // Usaremos um ícone genérico "sparkle" (brilho) do Heroicons.
 const ServiceIcon = () => (
     <svg
@@ -53,32 +54,41 @@ export default function Services() {
             {/* Container para centralizar o conteúdo */}
             <div className="container mx-auto px-6 text-center">
 
-                {/* Título da Seção */}
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                {/* Título da Seção - data-aos="fade-down" fará o título surgir de cima */}
+                <h2 
+                    className="text-3xl md:text-4xl font-bold mb-4"
+                    data-aos="fade-down"
+                >
                     Nossos Serviços
                 </h2>
 
-                {/* Parágrafo de Introdução */}
-                <p className="text-lg text-gray-300 mb-12 max-w-xl mx-auto">
+                {/* Parágrafo de Introdução - data-aos="fade-up" fará a introdução surgir de baixo */}
+                <p 
+                    className="text-lg text-gray-300 mb-12 max-w-xl mx-auto"
+                    data-aos="fade-up"
+                    data-aos-delay="100" // Pequeno atraso para aparecer depois do título
+                >
                     Descubra como podemos transformar sua casa com nossas soluções de alta qualidade e design sofisticado.
                 </p>
 
                 {/* Grid dos Cards de Serviço
-          - 'grid': Ativa o layout de grade
-          - 'grid-cols-1': 1 coluna em telas pequenas (mobile)
-          - 'md:grid-cols-3': 3 colunas em telas médias ou maiores (desktop)
-          - 'gap-8': Espaçamento entre os cards
-        */}
+                  * O grid em si não precisa de animação, mas os itens dentro dele sim.
+                */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    {/* Mapeamento dos dados
-            Isso cria um card para cada item no array 'servicesData'
-          */}
+                    {/* Mapeamento dos dados */}
                     {servicesData.map((service, index) => (
                         <div
                             key={index}
+                            // data-aos="zoom-in" fará o card dar um pequeno zoom ao aparecer
+                            data-aos="zoom-in" 
+                            // O atraso (delay) é calculado pelo índice para criar o efeito cascata: 
+                            // 1º card: 0ms de atraso
+                            // 2º card: 200ms de atraso
+                            // 3º card: 400ms de atraso
+                            data-aos-delay={index * 200}
                             className="bg-gray-700 p-8 rounded-lg shadow-lg
-                         transform transition duration-300 hover:scale-105 hover:shadow-green-900"
+                                transform transition duration-300 hover:scale-105 hover:shadow-green-900"
                         >
                             {/* Ícone */}
                             <div className="flex justify-center">

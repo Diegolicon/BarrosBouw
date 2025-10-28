@@ -4,10 +4,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-// 1. IMPORTE O NAVBAR (já deve estar aqui)
 import Navbar from "@/components/Navbar";
-// 2. IMPORTE O FOOTER
 import Footer from "@/components/Footer";
+import AOSClient from "@/components/AOSClient";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +25,8 @@ export default function RootLayout({
 
         {/* O Navbar fica no topo */}
         <Navbar />
+        
+        <AOSClient />
 
         {/* O {children} é o conteúdo da sua página */}
         {children}
