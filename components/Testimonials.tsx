@@ -48,7 +48,7 @@ export default function Testimonials() {
                     <Link href="/" className="text-2xl font-bold text-white mb-4 inline-block">
                         BARROS BOUW
                     </Link>
-                    <p className="text-sm">
+                    <p className="text-lg text-gray-300 mb-12 max-w-xl mx-auto">
                         Na FC Flooring, nos dedicamos a transformar sua visão em realidade.
                         Oferecemos soluções customizadas que combinam qualidade, durabilidade e design.
                     </p>
