@@ -13,7 +13,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "BARROS BOUW",
-    description: "Construindo o site fcflooring.pro com Next.js",
 };
 
 export default function RootLayout({
