@@ -4,8 +4,8 @@
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Gallery from '@/components/Gallery';
-import Testimonials from '@/components/Testimonials'; // <-- Importamos os Depoimentos
-
+import Testimonials from '@/components/Testimonials';
+import Contact from '@/components/ContactSection';
 /*
  * Documentação da Página Home
  * Esta é a página principal (rota "/") do nosso site.
@@ -26,6 +26,7 @@ export default function Home() {
             {/* Seção 4: Depoimentos */}
             <Testimonials /> {/* <-- Adicionamos os Depoimentos aqui */}
 
+            <Contact/>
             {/* PRÓXIMOS PASSOS:
         A última parte seria o Rodapé (Footer).
       */}

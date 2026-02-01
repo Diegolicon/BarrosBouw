@@ -7,6 +7,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AOSClient from "@/components/AOSClient";
+import FloatingButtons from "@/components/FloatingButtons"; // 1. Importe o novo componente
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,26 +16,29 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+    children,
+}: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
         <html lang="en">
-        <body className={inter.className}>
+            <body className={inter.className}>
+                {/* O Navbar fica no topo */}
+                <Navbar />
+                
+                <AOSClient />
 
-        {/* O Navbar fica no topo */}
-        <Navbar />
-        
-        <AOSClient />
+                {/* O {children} é o conteúdo da sua página */}
+                <main>
+                    {children}
+                </main>
 
-        {/* O {children} é o conteúdo da sua página */}
-        {children}
+                {/* 2. BOTÕES FLUTUANTES (Ficam sobrepostos a tudo) */}
+                <FloatingButtons />
 
-        {/* 3. ADICIONE O FOOTER AQUI (no final do body) */}
-        <Footer />
-
-        </body>
+                {/* O Footer no final do body */}
+                <Footer />
+            </body>
         </html>
     );
 }

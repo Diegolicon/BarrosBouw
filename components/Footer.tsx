@@ -1,80 +1,119 @@
-// components/Footer.tsx
-
-import Link from 'next/link';
-
-/* * Documentação do Componente Footer
- * * Objetivo: Exibir o rodapé principal do site em todas as páginas.
-*/
-
-// --- ÍCONES DE REDES SOCIAIS (Componentes Internos) ---
-
-const SocialIconFacebook = () => (
-    <a
-        href="#" // Coloque o link real do seu Facebook aqui
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-gray-400 hover:text-white transition-colors"
-        aria-label="Facebook"
-    >
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562V12h2.773l-.443 2.89h-2.33v7.018A9.957 9.957 0 0022 12z" />
-        </svg>
-    </a>
-);
-
-// --- ÍCONE DO INSTAGRAM CORRIGIDO ---
-const SocialIconInstagram = () => (
-    <a
-        href="#" // Coloque o link real do seu Instagram aqui
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-gray-400 hover:text-white transition-colors"
-        aria-label="Instagram"
-    >
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" clipRule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 1.172.053 1.905.32 2.563.578.729.29 1.34.647 1.95 1.25s.95 1.25.95 1.95c.258.658.525 1.39.578 2.563.07 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.053 1.172-.32 1.905-.578 2.563-.29.729-.647 1.34-1.25 1.95s-1.25.95-1.95.95c-.658.258-1.39.525-2.563.578-1.266.07-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.172-.053-1.905-.32-2.563-.578-.729-.29-1.34-.647-1.95-1.25s-.95-1.25-.95-1.95c-.258-.658-.525-1.39-.578-2.563-.07-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.053-1.172.32-1.905.578-2.563.29-.729.647-1.34 1.25-1.95s1.25-.95 1.95-.95c.658-.258 1.39.525 2.563.578C8.416 2.175 8.796 2.163 12 2.163zm0 1.62c-3.144 0-3.522.012-4.75.07-1.096.05-1.666.29-2.16.48-.52.2-.927.46-1.34.87s-.87.82-.87 1.34c-.19.494-.43 1.064-.48 2.16-.058 1.228-.07 1.606-.07 4.75s.012 3.522.07 4.75c.05 1.096.29 1.666.48 2.16.2.52.46.927.87 1.34s.82.87 1.34.87c.494.19 1.064.43 2.16.48 1.228.058 1.606.07 4.75.07s3.522-.012 4.75-.07c1.096-.05 1.666-.29 2.16-.48.52-.2.927.46 1.34-.87s.87-.82.87-1.34c.19-.494.43-1.064.48-2.16.058-1.228.07-1.606.07-4.75s-.012-3.522-.07-4.75c-.05-1.096-.29-1.666-.48-2.16-.2-.52-.46-.927-.87-1.34s-.82-.87-1.34-.87c-.494-.19-1.064-.43-2.16.48-1.228-.058-1.606-.07-4.75-.07zm0 3.842c-2.62 0-4.75 2.13-4.75 4.75s2.13 4.75 4.75 4.75 4.75-2.13 4.75-4.75-2.13-4.75-4.75-4.75zm0 7.875c-1.72 0-3.125-1.405-3.125-3.125s1.405-3.125 3.125-3.125 3.125 1.405 3.125 3.125-1.405 3.125-3.125 3.125zM16.5 6.375c-.621 0-1.125.504-1.125 1.125s.504 1.125 1.125 1.125 1.125-.504 1.125-1.125S17.121 6.375 16.5 6.375z" />
-        </svg>
-    </a>
-);
-
-
-// --- COMPONENTE PRINCIPAL ---
 export default function Footer() {
-    return (
-        <footer className="bg-gray-900 text-gray-400 py-12">
-            
-            {/* O 'container' centraliza tudo e dá as margens laterais */}
-            <div className="container mx-auto px-6">
-
-                {/* --- MUDANÇA NO LAYOUT ---
-                  Este 'div' agora controla o bloco de cima.
-                  - Em telas pequenas (mobile), é 'text-center'.
-                  - Em telas médias (desktop), é 'text-left'.
-                  - O 'max-w-md' garante que o texto não fique muito largo.
-                  - 'mx-auto' (mobile) e 'md:mx-0' (desktop) controlam 
-                    o alinhamento do *bloco inteiro*.
-                */}
-                <div className="text-center md:text-left max-w-md mx-auto md:mx-0">
-                    <div className="flex space-x-4 mt-6 justify-center md:justify-start">
-                        <SocialIconFacebook />
-                        <SocialIconInstagram />
-                    </div>
-                </div>
-
-                {/* --- MUDANÇA NO COPYRIGHT ---
-                  Este 'div' é separado. A classe 'text-center'
-                  garante que o texto de copyright fique sempre centralizado,
-                  independentemente do alinhamento do bloco de cima.
-                */}
-                <div className="border-t border-gray-700 mt-10 pt-8 text-center text-sm">
-                    <p>
-                        &copy; {new Date().getFullYear()} Barros Bouw. Todos os direitos reservados.
-                    </p>
-                    <p className="mt-1 text-xs">
-                        Clone de site feito para fins educacionais.
-                    </p>
-                </div>
+  return (
+    <footer className="bg-[#001b2e] text-white py-16 px-6 border-t border-white/5">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          
+          {/* Coluna 1: Logo e Social */}
+          <div className="flex flex-col gap-6">
+            {/* Espaço para a Logo */}
+            <div className="h-12 w-40 bg-transparent flex items-center justify-start">
+               {/* <img src="/path-to-your-logo.png" alt="Barros Bouw Logo" className="h-full object-contain" /> */}
+               <div className="text-2xl font-bold tracking-tighter">BARROS <span className="text-[#56a3a6]">BOUW</span></div>
             </div>
-        </footer>
-    );
+            
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+              Construindo confiança e entregando excelência em cada projeto desde 2008.
+            </p>
+
+            {/* Redes Sociais */}
+            <div className="flex gap-4">
+              {[<FacebookIcon />, <InstagramIcon />, <LinkedinIcon />].map((icon, index) => (
+                <a key={index} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#56a3a6] transition-all border border-white/10">
+                  {icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Coluna 2: Links Rápidos */}
+          <div>
+            <h4 className="text-lg font-bold mb-6">Links Rápidos</h4>
+            <ul className="space-y-4 text-gray-400 text-sm">
+              {['Início', 'Serviços', 'Galeria', 'Depoimentos', 'Contato'].map((item) => (
+                <li key={item}>
+                  <a href={`#${item.toLowerCase()}`} className="hover:text-[#56a3a6] transition-colors">{item}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Coluna 3: Serviços */}
+          <div>
+            <h4 className="text-lg font-bold mb-6">Serviços</h4>
+            <ul className="space-y-4 text-gray-400 text-sm">
+              {['Reformas Completas', 'Construção Civil', 'Pintura', 'Marcenaria', 'Hidráulica e Elétrica'].map((item) => (
+                <li key={item}>
+                  <a href="#servicos" className="hover:text-[#56a3a6] transition-colors">{item}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Coluna 4: Contato */}
+          <div>
+            <h4 className="text-lg font-bold mb-6">Contato</h4>
+            <ul className="space-y-6 text-gray-400 text-sm">
+              <li className="flex items-start gap-3">
+                <PhoneIconSmall />
+                <div>
+                  <p className="text-xs uppercase opacity-50 mb-1">Telefone</p>
+                  <p className="text-white font-medium">+31 12 345 6789</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <MailIconSmall />
+                <div>
+                  <p className="text-xs uppercase opacity-50 mb-1">E-mail</p>
+                  <p className="text-white font-medium">contato@barrosbouw.nl</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapIconSmall />
+                <div>
+                  <p className="text-xs uppercase opacity-50 mb-1">Endereço</p>
+                  <p className="text-white font-medium">Amsterdam, Holanda</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Linha Inferior */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+          <p>© 2024 Barros Bouw. Todos os direitos reservados.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+            <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
+
+/* --- Ícones Auxiliares (SVGs) --- */
+
+const FacebookIcon = () => (
+  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+);
+
+const InstagramIcon = () => (
+  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+);
+
+const LinkedinIcon = () => (
+  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+);
+
+const PhoneIconSmall = () => (
+  <svg className="w-5 h-5 text-[#56a3a6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+);
+
+const MailIconSmall = () => (
+  <svg className="w-5 h-5 text-[#56a3a6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+);
+
+const MapIconSmall = () => (
+  <svg className="w-5 h-5 text-[#56a3a6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><circle cx="12" cy="11" r="3" strokeWidth="2"/></svg>
+);

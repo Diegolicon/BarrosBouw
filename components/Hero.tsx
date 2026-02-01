@@ -1,52 +1,75 @@
 // components/Hero.tsx
 
-/* * Documentação do Componente Hero
- * * Objetivo: Esta é a seção principal de "boas-vindas" (Hero) do site.
- * Ela deve ter um fundo (imagem ou cor) e um texto centralizado
- * com um "Chamado à Ação" (Call to Action - CTA).
- *
- * MODIFICAÇÃO: Adicionado 'data-aos' aos elementos internos para animação de carregamento.
-*/
 export default function Hero() {
     return (
-        <section className="relative bg-gray-900 text-white">
-            {/* Container para o conteúdo.
-        - 'h-screen' faz a seção ocupar a tela inteira.
-        - 'flex flex-col' e 'justify-center items-center' centralizam o conteúdo.
-        - 'text-center' alinha o texto.
-      */}
-            <div className="container mx-auto px-6 z-10 h-150 flex flex-col justify-center items-center text-center">
+        <section className="relative h-[80vh] flex items-center overflow-hidden bg-gray-900">
+            {/* 1. Imagem de Fundo */}
+            <div className="absolute inset-0 z-0">
+                <img 
+                    src="/images/imageFirst.png" 
+                    alt="Background" 
+                    className="w-full h-full object-cover"
+                />
 
-                {/* Título Principal - Aparece primeiro, descendo */}
-                <h1 
-                    className="text-4xl md:text-6xl font-extrabold leading-tight mb-4"
-                    data-aos="fade-down"
-                    data-aos-duration="600"
-                >
-                    Construa seus próprios sonhos
-                </h1>
+                {/* --- OPÇÕES DE DEGRADÊ PARA MOSTRAR AO CONTRATANTE --- */}
 
-                {/* Subtítulo / Slogan - Aparece logo depois do título */}
-                <p 
-                    className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
-                    data-aos="fade-down"
-                    data-aos-delay="200"
-                    data-aos-duration="600"
-                >
-                    Na Barros Bouw, nos dedicamos a transformar sua visão em realidade.
-                    Oferecemos soluções customizadas que combinam qualidade, durabilidade e design.
-                </p>
+                {/* OPÇÃO A: ESTILO BRITO RENOVATION (Degradê Lateral Focado no Texto) 
+                    Fica muito evidente: o lado esquerdo é escuro e o direito é nítido. */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent z-10"></div>
 
-                {/* Botão de Call to Action (CTA) - Aparece por último */}
-                <a
-                    href="/contato"
-                    data-aos="fade-up"
-                    data-aos-delay="400"
-                    data-aos-duration="600"
-                    className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300 shadow-lg"
-                >
-                    Orçamento Grátis <span className="ml-2 bg-yellow-400 text-gray-900 px-2 py-0.5 rounded-full text-sm font-extrabold">30% OFF</span>
-                </a>
+                {/* OPÇÃO B: OVERLAY SUAVE (Escurece a imagem por igual)
+                    Se quiser testar esta, comente a linha acima e descomente a de baixo:*/
+                    // <div className="absolute inset-0 bg-black/40 z-10"></div> 
+                }
+
+                {/* ------------------------------------------------------- */}
+            </div>
+
+            <div className="container mx-auto px-6 z-20"> {/* z-20 para ficar acima do degradê */}
+                <div className="max-w-3xl">
+                    
+                    <h1 
+                        className="text-4xl md:text-7xl font-bold leading-tight mb-6 text-white"
+                        data-aos="fade-right"
+                        data-aos-duration="800"
+                    >
+                        Construa seus <br /> 
+                        <span className="text-green-500">próprios sonhos</span>
+                    </h1>
+
+                    <p 
+                        className="text-lg md:text-2xl text-gray-200 mb-10 leading-relaxed border-l-4 border-green-600 pl-4"
+                        data-aos="fade-right"
+                        data-aos-delay="200"
+                        data-aos-duration="800"
+                    >
+                        Na Barros Bouw, transformamos sua visão em realidade com soluções 
+                        customizadas que combinam precisão e design.
+                    </p>
+
+                    <div 
+                        className="flex flex-wrap gap-4"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                    >
+                        <a
+                            href="/contato"
+                            className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-md text-lg transition duration-300 shadow-xl flex items-center"
+                        >
+                            Orçamento Grátis
+                            <span className="ml-3 bg-yellow-400 text-gray-900 px-2 py-0.5 rounded text-xs font-black uppercase">
+                                30% OFF
+                            </span>
+                        </a>
+                        
+                        <a
+                            href="#projetos"
+                            className="border-2 border-white hover:bg-white hover:text-black text-white font-bold py-4 px-10 rounded-md text-lg transition duration-300"
+                        >
+                            Ver Projetos
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     );
