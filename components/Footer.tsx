@@ -1,90 +1,94 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#001b2e] text-white py-16 px-6 border-t border-white/5">
+    <footer className="bg-[#0f0f0f] text-white py-16 px-6 border-t border-white/5">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
-          {/* Coluna 1: Logo e Social */}
+          {/* Coluna 1: Logo e Identidade */}
           <div className="flex flex-col gap-6">
-            {/* Espaço para a Logo */}
-            <div className="h-12 w-40 bg-transparent flex items-center justify-start">
-               {/* <img src="/path-to-your-logo.png" alt="Barros Bouw Logo" className="h-full object-contain" /> */}
-               <div className="text-2xl font-bold tracking-tighter">BARROS <span className="text-[#56a3a6]">BOUW</span></div>
+            <div className="flex flex-col">
+                <span className="text-2xl font-black tracking-tighter text-white">
+                    BARROS <span className="text-[#c5a47e]">BOUW</span>
+                </span>
+                <p className="text-[10px] uppercase tracking-[0.4em] text-[#c5a47e] font-bold">Construction</p>
             </div>
             
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Construindo confiança e entregando excelência em cada projeto desde 2008.
+            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+              Elevando o padrão da construção civil na Holanda com precisão técnica e acabamento de luxo desde 2008.
             </p>
 
-            {/* Redes Sociais */}
+            {/* Redes Sociais com Hover Dourado */}
             <div className="flex gap-4">
               {[<FacebookIcon />, <InstagramIcon />, <LinkedinIcon />].map((icon, index) => (
-                <a key={index} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#56a3a6] transition-all border border-white/10">
+                <a key={index} href="#" className="w-10 h-10 rounded-sm bg-white/5 flex items-center justify-center hover:bg-[#c5a47e] hover:text-black transition-all duration-300 border border-white/10 text-gray-400">
                   {icon}
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Coluna 2: Links Rápidos */}
+          {/* Coluna 2: Navegação */}
           <div>
-            <h4 className="text-lg font-bold mb-6">Links Rápidos</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
+            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-[#c5a47e] mb-8">Navegação</h4>
+            <ul className="space-y-4 text-gray-400 text-[13px] font-medium">
               {['Início', 'Serviços', 'Galeria', 'Depoimentos', 'Contato'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="hover:text-[#56a3a6] transition-colors">{item}</a>
+                  <a href={`#${item.toLowerCase()}`} className="hover:text-white transition-colors flex items-center gap-2 group">
+                    <span className="h-[1px] w-0 bg-[#c5a47e] group-hover:w-4 transition-all duration-300"></span>
+                    {item}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Coluna 3: Serviços */}
+          {/* Coluna 3: Especialidades */}
           <div>
-            <h4 className="text-lg font-bold mb-6">Serviços</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
-              {['Reformas Completas', 'Construção Civil', 'Pintura', 'Marcenaria', 'Hidráulica e Elétrica'].map((item) => (
-                <li key={item}>
-                  <a href="#servicos" className="hover:text-[#56a3a6] transition-colors">{item}</a>
+            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-[#c5a47e] mb-8">Especialidades</h4>
+            <ul className="space-y-4 text-gray-400 text-[13px] font-medium">
+              {['Reformas Completas', 'Construção Civil', 'Pintura Premium', 'Marcenaria Fina', 'Design de Interiores'].map((item) => (
+                <li key={item} className="hover:text-white cursor-default transition-colors italic">
+                  {item}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Coluna 4: Contato */}
+          {/* Coluna 4: Contato Direto */}
           <div>
-            <h4 className="text-lg font-bold mb-6">Contato</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-[#c5a47e] mb-8">Contato</h4>
             <ul className="space-y-6 text-gray-400 text-sm">
-              <li className="flex items-start gap-3">
-                <PhoneIconSmall />
+              <li className="flex items-start gap-4">
+                <div className="mt-1"><PhoneIconSmall /></div>
                 <div>
-                  <p className="text-xs uppercase opacity-50 mb-1">Telefone</p>
-                  <p className="text-white font-medium">+31 12 345 6789</p>
+                  <p className="text-[10px] uppercase tracking-widest opacity-50 mb-1">Telefone</p>
+                  <p className="text-white font-bold text-base hover:text-[#c5a47e] transition-colors cursor-pointer">+31 12 345 6789</p>
                 </div>
               </li>
-              <li className="flex items-start gap-3">
-                <MailIconSmall />
+              <li className="flex items-start gap-4">
+                <div className="mt-1"><MailIconSmall /></div>
                 <div>
-                  <p className="text-xs uppercase opacity-50 mb-1">E-mail</p>
-                  <p className="text-white font-medium">contato@barrosbouw.nl</p>
+                  <p className="text-[10px] uppercase tracking-widest opacity-50 mb-1">E-mail</p>
+                  <p className="text-white font-bold text-base hover:text-[#c5a47e] transition-colors cursor-pointer text-[13px]">contato@barrosbouw.nl</p>
                 </div>
               </li>
-              <li className="flex items-start gap-3">
-                <MapIconSmall />
+              <li className="flex items-start gap-4">
+                <div className="mt-1"><MapIconSmall /></div>
                 <div>
-                  <p className="text-xs uppercase opacity-50 mb-1">Endereço</p>
-                  <p className="text-white font-medium">Amsterdam, Holanda</p>
+                  <p className="text-[10px] uppercase tracking-widest opacity-50 mb-1">Escritório</p>
+                  <p className="text-white font-bold leading-tight">Amsterdam, Noord-Holland</p>
                 </div>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Linha Inferior */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-          <p>© 2024 Barros Bouw. Todos os direitos reservados.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
-            <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+        {/* Copyright e Links Legais */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] uppercase tracking-widest text-gray-600">
+          <p className="text-center md:text-left">© 2026 <span className="text-gray-400">Barros Bouw</span>. Built for Excellence.</p>
+          <div className="flex gap-8">
+            <a href="#" className="hover:text-[#c5a47e] transition-colors tracking-widest">Privacidade</a>
+            <a href="#" className="hover:text-[#c5a47e] transition-colors tracking-widest">Termos</a>
           </div>
         </div>
       </div>
@@ -92,7 +96,7 @@ export default function Footer() {
   );
 }
 
-/* --- Ícones Auxiliares (SVGs) --- */
+/* --- Ícones com a Cor Dourada do Tema --- */
 
 const FacebookIcon = () => (
   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
@@ -107,13 +111,13 @@ const LinkedinIcon = () => (
 );
 
 const PhoneIconSmall = () => (
-  <svg className="w-5 h-5 text-[#56a3a6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+  <svg className="w-5 h-5 text-[#c5a47e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
 );
 
 const MailIconSmall = () => (
-  <svg className="w-5 h-5 text-[#56a3a6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+  <svg className="w-5 h-5 text-[#c5a47e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
 );
 
 const MapIconSmall = () => (
-  <svg className="w-5 h-5 text-[#56a3a6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><circle cx="12" cy="11" r="3" strokeWidth="2"/></svg>
+  <svg className="w-5 h-5 text-[#c5a47e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><circle cx="12" cy="11" r="3" strokeWidth="2"/></svg>
 );

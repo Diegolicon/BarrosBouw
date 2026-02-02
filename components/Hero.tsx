@@ -2,30 +2,20 @@
 
 export default function Hero() {
     return (
-        <section className="relative h-[80vh] flex items-center overflow-hidden bg-gray-900">
-            {/* 1. Imagem de Fundo */}
+        <section className="relative h-[80vh] flex items-center overflow-hidden bg-[#0a0a0a]">
+            {/* 1. Imagem de Fundo com Overlay mais denso */}
             <div className="absolute inset-0 z-0">
                 <img 
                     src="/images/imageFirst.png" 
                     alt="Background" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover opacity-60" // Reduzi a opacidade para o texto brilhar
                 />
 
-                {/* --- OPÇÕES DE DEGRADÊ PARA MOSTRAR AO CONTRATANTE --- */}
-
-                {/* OPÇÃO A: ESTILO BRITO RENOVATION (Degradê Lateral Focado no Texto) 
-                    Fica muito evidente: o lado esquerdo é escuro e o direito é nítido. */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent z-10"></div>
-
-                {/* OPÇÃO B: OVERLAY SUAVE (Escurece a imagem por igual)
-                    Se quiser testar esta, comente a linha acima e descomente a de baixo:*/
-                    // <div className="absolute inset-0 bg-black/40 z-10"></div> 
-                }
-
-                {/* ------------------------------------------------------- */}
+                {/* Overlay Gradiente ajustado para um visual mais "Dark" */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10"></div>
             </div>
 
-            <div className="container mx-auto px-6 z-20"> {/* z-20 para ficar acima do degradê */}
+            <div className="container mx-auto px-6 z-20">
                 <div className="max-w-3xl">
                     
                     <h1 
@@ -34,11 +24,13 @@ export default function Hero() {
                         data-aos-duration="800"
                     >
                         Construa seus <br /> 
-                        <span className="text-green-500">próprios sonhos</span>
+                        {/* Trocado de Green-500 para um Dourado/Sand (#c5a47e) */}
+                        <span className="text-[#c5a47e]">próprios sonhos</span>
                     </h1>
 
                     <p 
-                        className="text-lg md:text-2xl text-gray-200 mb-10 leading-relaxed border-l-4 border-green-600 pl-4"
+                        // Trocado a borda verde pela borda dourada e texto levemente suavizado
+                        className="text-lg md:text-2xl text-gray-300 mb-10 leading-relaxed border-l-4 border-[#c5a47e] pl-4"
                         data-aos="fade-right"
                         data-aos-delay="200"
                         data-aos-duration="800"
@@ -52,19 +44,21 @@ export default function Hero() {
                         data-aos="fade-up"
                         data-aos-delay="400"
                     >
+                        {/* Botão Principal: Trocado de Verde para o tom Dourado/Escuro do Figma */}
                         <a
                             href="/contato"
-                            className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-md text-lg transition duration-300 shadow-xl flex items-center"
+                            className="bg-[#c5a47e] hover:bg-[#b3936a] text-black font-bold py-4 px-10 rounded-sm text-lg transition duration-300 shadow-xl flex items-center"
                         >
                             Orçamento Grátis
-                            <span className="ml-3 bg-yellow-400 text-gray-900 px-2 py-0.5 rounded text-xs font-black uppercase">
+                            <span className="ml-3 bg-black text-[#c5a47e] px-2 py-0.5 rounded text-xs font-black uppercase">
                                 30% OFF
                             </span>
                         </a>
                         
+                        {/* Botão Secundário: Ghost button com borda branca sutil */}
                         <a
                             href="#projetos"
-                            className="border-2 border-white hover:bg-white hover:text-black text-white font-bold py-4 px-10 rounded-md text-lg transition duration-300"
+                            className="border border-white/30 hover:border-white hover:bg-white/10 text-white font-medium py-4 px-10 rounded-sm text-lg transition duration-300"
                         >
                             Ver Projetos
                         </a>

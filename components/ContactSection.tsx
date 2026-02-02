@@ -1,138 +1,140 @@
+// components/ContactSection.tsx
+
 export default function ContactSection() {
   return (
-    <section className="bg-white py-16 px-6" id="contato">
-      <div className="container mx-auto max-w-6xl text-center">
-        <h2 className="text-4xl font-bold text-[#003358] mb-2">
-          Solicite Seu <span className="text-[#56a3a6]">Orçamento</span>
-        </h2>
-        <p className="text-gray-600 mb-12">Preencha o formulário e receba um orçamento gratuito em até 24 horas</p>
+    <section className="bg-[#0f0f0f] py-24 px-6 relative overflow-hidden" id="contato">
+      {/* Detalhe de luz de fundo para profundidade */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#c5a47e]/5 rounded-full blur-[120px] -z-10" />
 
-        {/* items-stretch faz as colunas terem a mesma altura */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      <div className="container mx-auto max-w-6xl">
+        {/* Cabeçalho */}
+        <div data-aos="fade-up" className="mb-20 text-center">
+          <p className="text-[#c5a47e] text-[11px] uppercase tracking-[0.5em] font-bold mb-4">Contato</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter">
+            Solicite seu <span className="text-[#c5a47e]">Orçamento</span>
+          </h2>
+          <div className="w-24 h-[1px] bg-[#c5a47e] mx-auto mb-8"></div>
+          <p className="text-gray-400 max-w-xl mx-auto leading-relaxed">
+            Transformamos sua visão em realidade com precisão técnica e acabamento de alto padrão. Nossa equipe retornará em até 24h.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           
-          {/* Coluna Esquerda */}
-          <div className="flex flex-col gap-6">
-            <div className="bg-[#002b4d] text-white p-10 rounded-2xl text-left shadow-xl flex-grow flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-8 italic text-white/90 uppercase tracking-wide">Entre em Contato</h3>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#56a3a6]/20 p-3 rounded-lg"><PhoneIcon /></div>
-                  <div><p className="text-xs opacity-70">Telefone</p><p className="font-bold">+31 12 345 6789</p></div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#25D366]/20 p-3 rounded-lg"><WhatsAppIcon /></div>
-                  <div><p className="text-xs opacity-70">WhatsApp</p><p className="font-bold">+31 12 345 6789</p></div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#56a3a6]/20 p-3 rounded-lg"><MailIcon /></div>
-                  <div><p className="text-xs opacity-70">E-mail</p><p className="font-bold">contato@barrosbouw.nl</p></div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#56a3a6]/20 p-3 rounded-lg"><MapIcon /></div>
-                  <div><p className="text-xs opacity-70">Endereço</p><p className="font-bold">Amsterdam, Holanda</p></div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#56a3a6]/20 p-3 rounded-lg"><ClockIcon /></div>
-                  <div><p className="text-xs opacity-70">Horário</p><p className="font-bold">Seg - Sex: 8h às 18h / Sáb: 9h às 13h</p></div>
-                </div>
+          {/* Coluna Esquerda: Informações (4 colunas) */}
+          <div className="lg:col-span-5 flex flex-col gap-8" data-aos="fade-right">
+            <div className="bg-white/5 backdrop-blur-sm p-10 rounded-sm border border-white/10 flex-grow flex flex-col justify-center relative overflow-hidden">
+              {/* Linha decorativa vertical dourada */}
+              <div className="absolute left-0 top-10 bottom-10 w-[2px] bg-[#c5a47e]"></div>
+              
+              <h3 className="text-sm font-bold mb-12 uppercase tracking-[0.3em] text-[#c5a47e] ml-4">Canais de Atendimento</h3>
+              
+              <div className="space-y-10 ml-4">
+                <ContactInfo icon={<PhoneIcon />} label="Telefone" value="+31 12 345 6789" />
+                <ContactInfo icon={<WhatsAppIcon />} label="WhatsApp" value="+31 12 345 6789" isWhatsApp />
+                <ContactInfo icon={<MailIcon />} label="E-mail" value="contato@barrosbouw.nl" />
+                <ContactInfo icon={<MapIcon />} label="Localização" value="Amsterdam, Holanda" />
               </div>
             </div>
 
-            <div className="bg-[#f0f7f7] p-8 rounded-2xl text-left border border-[#56a3a6]/10 shadow-sm">
-              <h4 className="font-bold text-[#003358] mb-4">Por que escolher a Barros Bouw?</h4>
-              <ul className="space-y-2">
-                {['Orçamento gratuito em 24h', 'Garantia de qualidade', 'Prazos cumpridos', 'Equipe profissional'].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-gray-700 text-sm">
-                    <div className="w-1.5 h-1.5 bg-[#56a3a6] rounded-full" /> {item}
+            {/* Diferenciais Rápidos */}
+            <div className="bg-[#c5a47e] p-8 rounded-sm">
+              <h4 className="font-black text-black mb-4 uppercase text-[11px] tracking-widest">Compromisso Barros Bouw</h4>
+              <ul className="grid grid-cols-2 gap-4">
+                {['Orçamento em 24h', 'Garantia Técnica', 'Prazos Rigorosos', 'Mão de Obra Elite'].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-black/80 text-[11px] font-bold uppercase tracking-tighter">
+                    <div className="w-1.5 h-1.5 bg-black rounded-full" /> {item}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          {/* Coluna Direita - Formulário Full Height */}
-          <div className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 flex flex-col">
-            <form className="flex flex-col h-full space-y-5 text-left text-sm">
-              <div className="space-y-5">
-                <div>
-                  <label className="block font-bold text-[#003358] mb-1">Nome Completo *</label>
-                  <input type="text" placeholder="Seu nome" className="w-full p-3 rounded-lg border border-gray-200 focus:border-[#56a3a6] outline-none" />
-                </div>
-                <div>
-                  <label className="block font-bold text-[#003358] mb-1">E-mail *</label>
-                  <input type="email" placeholder="seu@email.com" className="w-full p-3 rounded-lg border border-gray-200 focus:border-[#56a3a6] outline-none" />
-                </div>
-                <div>
-                  <label className="block font-bold text-[#003358] mb-1">Telefone/WhatsApp *</label>
-                  <input type="text" placeholder="+31 12 345 6789" className="w-full p-3 rounded-lg border border-gray-200 focus:border-[#56a3a6] outline-none" />
-                </div>
-                <div>
-                  <label className="block font-bold text-[#003358] mb-1">Serviço Desejado *</label>
-                  <select className="w-full p-3 rounded-lg border border-gray-200 focus:border-[#56a3a6] outline-none bg-white">
-                    <option>Selecione um serviço</option>
-                    <option>Reforma Geral</option>
-                    <option>Banheiro</option>
-                    <option>Cozinha</option>
-                    <option>Piso</option>
+          {/* Coluna Direita: Formulário (7 colunas) */}
+          <div className="lg:col-span-7 bg-white/[0.02] p-10 rounded-sm border border-white/5 shadow-2xl" data-aos="fade-left">
+            <form className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <InputField label="Nome Completo *" type="text" placeholder="Ex: Jan van Dijk" />
+                <InputField label="E-mail *" type="email" placeholder="contato@empresa.com" />
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <InputField label="WhatsApp *" type="text" placeholder="+31 00 000 0000" />
+                <div className="flex flex-col">
+                  <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#c5a47e] mb-3">Serviço *</label>
+                  <select className="w-full p-4 bg-white/5 border border-white/10 focus:border-[#c5a47e] text-white outline-none text-sm transition-all rounded-sm appearance-none cursor-pointer">
+                    <option className="bg-[#1a1a1a]">Selecione o serviço</option>
+                    <option className="bg-[#1a1a1a]">Reforma Residencial</option>
+                    <option className="bg-[#1a1a1a]">Construção Comercial</option>
+                    <option className="bg-[#1a1a1a]">Manutenção Estrutural</option>
                   </select>
                 </div>
               </div>
 
-              {/* Flex-grow no container da mensagem estica o campo para preencher a div */}
-              <div className="flex-grow flex flex-col">
-                <label className="block font-bold text-[#003358] mb-1">Mensagem *</label>
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#c5a47e] mb-3">Detalhes do Projeto *</label>
                 <textarea 
-                  placeholder="Descreva seu projeto..." 
-                  className="w-full p-3 rounded-lg border border-gray-200 focus:border-[#56a3a6] outline-none resize-none flex-grow"
+                  placeholder="Descreva brevemente sua necessidade..." 
+                  className="w-full p-4 bg-white/5 border border-white/10 focus:border-[#c5a47e] text-white outline-none text-sm transition-all rounded-sm resize-none min-h-[150px]"
                 />
               </div>
 
-              <button className="w-full bg-[#56a3a6] hover:bg-[#458b8e] text-white font-bold py-4 rounded-lg transition-colors flex items-center justify-center gap-2 uppercase tracking-wider">
-                Enviar Solicitação <ArrowRightIcon />
+              <button className="group relative w-full overflow-hidden bg-[#c5a47e] text-black font-black py-6 transition-all uppercase tracking-[0.3em] text-xs">
+                <span className="relative z-10 flex items-center justify-center gap-3 group-hover:gap-5 transition-all">
+                  Enviar Solicitação <ArrowRightIcon />
+                </span>
+                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </section>
   );
 }
 
-/* --- DECLARAÇÃO DOS ÍCONES --- */
+/* --- SUB-COMPONENTES AUXILIARES --- */
 
+function ContactInfo({ icon, label, value, isWhatsApp = false }: any) {
+  return (
+    <div className="flex items-center gap-6 group">
+      <div className={`p-4 rounded-sm transition-all duration-500 border ${isWhatsApp ? 'border-green-500/20 text-green-500 group-hover:bg-green-500 group-hover:text-white' : 'border-[#c5a47e]/20 text-[#c5a47e] group-hover:bg-[#c5a47e] group-hover:text-black'}`}>
+        {icon}
+      </div>
+      <div>
+        <p className="text-[10px] uppercase tracking-[0.2em] text-[#c5a47e] font-bold mb-1">{label}</p>
+        <p className="text-white font-bold text-lg tracking-tight group-hover:text-[#c5a47e] transition-colors">{value}</p>
+      </div>
+    </div>
+  );
+}
+
+function InputField({ label, ...props }: any) {
+  return (
+    <div className="flex flex-col">
+      <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#c5a47e] mb-3">{label}</label>
+      <input 
+        {...props} 
+        className="w-full p-4 bg-white/5 border border-white/10 focus:border-[#c5a47e] text-white outline-none text-sm transition-all rounded-sm placeholder:text-gray-600"
+      />
+    </div>
+  );
+}
+
+/* --- ÍCONES (SVGs) --- */
 const PhoneIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-  </svg>
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
 );
-
 const WhatsAppIcon = () => (
-  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-  </svg>
+  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
 );
-
 const MailIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-  </svg>
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
 );
-
 const MapIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-  </svg>
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
 );
-
-const ClockIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-);
-
 const ArrowRightIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-  </svg>
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
 );

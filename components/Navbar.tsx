@@ -1,121 +1,96 @@
-// components/Navbar.tsx
-
-// 1. Precisamos marcar como "client component" para usar Hooks
-// (useState, useEffect) no App Router do Next.js
 "use client";
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link'; // Componente do Next.js para links
+import Link from 'next/link';
 
-/* * Documentação do Componente Navbar
- * * Objetivo: Criar um menu de navegação que fica no topo de todas as páginas.
- * * * Funcionalidades:
- * - Fica transparente no topo e sólido (escuro) após rolar a página.
- * - Links de navegação para Home, Serviços, Galeria e Contato.
- * - Botão CTA (Call to Action) "Free Estimate".
- * - Menu "hambúrguer" responsivo para dispositivos móveis.
-*/
 export default function Navbar() {
-    // 2. Estado para controlar o menu mobile (aberto/fechado)
     const [isOpen, setIsOpen] = useState(false);
-
-    // 3. Estado para controlar o fundo do Navbar (transparente/sólido)
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // 4. Efeito (useEffect) para detectar a rolagem da página
     useEffect(() => {
         const handleScroll = () => {
-            // window.scrollY > 10 significa "se o usuário rolou mais de 10 pixels"
-            if (window.scrollY > 10) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsScrolled(window.scrollY > 50);
         };
-
-        // Adiciona o "ouvinte" de rolagem quando o componente é montado
         window.addEventListener('scroll', handleScroll);
-
-        // Remove o "ouvinte" quando o componente é desmontado (boa prática)
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []); // O array vazio [] garante que este efeito rode apenas uma vez
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
-        /* 5. Tag <nav> principal
-         * - 'fixed top-0 left-0 w-full': Fixa o menu no topo.
-         * - 'z-50': Garante que ele fique acima de outros conteúdos.
-         * - 'transition-colors duration-300': Anima a mudança de cor.
-         * - Lógica de cor: Se 'isScrolled' for true, usa 'bg-gray-900', senão 'bg-transparent'.
-        */
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-                isScrolled ? 'bg-gray-900 shadow-lg' : 'bg-transparent'
+            className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+                isScrolled 
+                ? 'bg-[#0f0f0f]/95 backdrop-blur-md py-3 shadow-2xl border-b border-white/5' 
+                : 'bg-transparent py-6'
             }`}
         >
-            <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div className="container mx-auto px-6 flex justify-between items-center">
 
-                {/* Logo (substitua pelo seu logo) */}
-                <Link href="/" className="text-2xl font-bold text-white">
-                    BARROS BOUW
+                {/* Logo Estilizado */}
+                <Link href="/" className="group">
+                    <span className="text-xl md:text-2xl font-black tracking-tighter text-white">
+                        BARROS <span className="text-[#c5a47e] group-hover:text-white transition-colors">BOUW</span>
+                    </span>
+                    <p className="text-[10px] uppercase tracking-[0.4em] text-[#c5a47e] -mt-1 font-bold">Construction</p>
                 </Link>
 
-                {/* 6. Links de Navegação (Desktop) */}
-                {/* 'hidden md:flex' = Escondido em telas pequenas, vira flex em médias/grandes */}
-                <div className="hidden md:flex space-x-6 items-center">
-                    <Link href="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
-                    <Link href="/servicos" className="text-gray-300 hover:text-white transition-colors">Serviços</Link>
-                    <Link href="/galeria" className="text-gray-300 hover:text-white transition-colors">Galeria</Link>
-                    <Link href="/contato" className="text-gray-300 hover:text-white transition-colors">Contato</Link>
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex space-x-8 items-center">
+                    {['Home', 'Serviços', 'Galeria', 'Contato'].map((item) => (
+                        <Link 
+                            key={item}
+                            href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+                            className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-300 hover:text-[#c5a47e] transition-colors"
+                        >
+                            {item}
+                        </Link>
+                    ))}
 
-                    {/* Botão CTA (Desktop) */}
-                    <a
+                    <Link
                         href="/contato"
-                        className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
+                        className="bg-[#c5a47e] hover:bg-white text-black text-[11px] uppercase tracking-widest font-black py-3 px-6 rounded-sm transition-all duration-300"
                     >
                         Free Estimate
-                    </a>
+                    </Link>
                 </div>
 
-                {/* 7. Botão do Menu Mobile (Hambúrguer) */}
-                {/* 'md:hidden' = Mostrado apenas em telas pequenas/médias */}
+                {/* Mobile Toggle */}
                 <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
-                        {/* Ícone (SVG) - Hambúrguer ou X */}
-                        {isOpen ? (
-                            // Ícone "X" (fechar)
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        ) : (
-                            // Ícone "Hambúrguer" (abrir)
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                            </svg>
-                        )}
+                    <button 
+                        onClick={() => setIsOpen(!isOpen)} 
+                        className="text-white p-2 focus:outline-none"
+                        aria-label="Toggle Menu"
+                    >
+                        <div className="w-6 h-5 flex flex-col justify-between items-end">
+                            <span className={`h-[2px] bg-[#c5a47e] transition-all duration-300 ${isOpen ? 'w-6 rotate-45 translate-y-[9px]' : 'w-6'}`}></span>
+                            <span className={`h-[2px] bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : 'w-4'}`}></span>
+                            <span className={`h-[2px] bg-[#c5a47e] transition-all duration-300 ${isOpen ? 'w-6 -rotate-45 -translate-y-[9px]' : 'w-5'}`}></span>
+                        </div>
                     </button>
                 </div>
             </div>
 
-            {/* 8. Menu Suspenso (Mobile) */}
-            {/* Aparece condicionalmente se 'isOpen' for true */}
-            {isOpen && (
-                <div className="md:hidden bg-gray-900 px-6 pb-4 space-y-2">
-                    <Link href="/" className="block text-gray-300 hover:text-white py-2">Home</Link>
-                    <Link href="/servicos" className="block text-gray-300 hover:text-white py-2">Serviços</Link>
-                    <Link href="/galeria" className="block text-gray-300 hover:text-white py-2">Galeria</Link>
-                    <Link href="/contato" className="block text-gray-300 hover:text-white py-2">Contato</Link>
-
-                    {/* Botão CTA (Mobile) */}
-                    <a
-                        href="/contato"
-                        className="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 w-full"
+            {/* Mobile Menu Overlay */}
+            <div className={`fixed inset-0 bg-[#0f0f0f] z-[-1] flex flex-col items-center justify-center space-y-8 transition-all duration-500 md:hidden ${
+                isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+            }`}>
+                {['Home', 'Serviços', 'Galeria', 'Contato'].map((item) => (
+                    <Link 
+                        key={item}
+                        href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                        onClick={() => setIsOpen(false)}
+                        className="text-2xl uppercase tracking-[0.3em] font-bold text-white hover:text-[#c5a47e]"
                     >
-                        Free Estimate
-                    </a>
-                </div>
-            )}
+                        {item}
+                    </Link>
+                ))}
+                <Link
+                    href="/contato"
+                    onClick={() => setIsOpen(false)}
+                    className="bg-[#c5a47e] text-black font-black py-4 px-10 uppercase tracking-widest"
+                >
+                    Free Estimate
+                </Link>
+            </div>
         </nav>
     );
 }
