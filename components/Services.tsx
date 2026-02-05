@@ -12,7 +12,7 @@ const servicesData = [
     )
   },
   {
-    title: "Pintura",
+    title: "Pintura Profissional",
     description: "Pintura interna e externa com acabamento profissional e materiais de primeira.",
     popular: false,
     icon: (
@@ -67,45 +67,55 @@ const servicesData = [
 
 export default function Services() {
   return (
-    <section className="bg-[#0f0f0f] py-24 px-6" id="servicos">
+    <section className="bg-[#0f0f0f] py-24 px-6 overflow-hidden" id="servicos">
       <div className="container mx-auto max-w-6xl text-center">
         
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Nossos <span className="text-[#c5a47e]">Serviços</span>
-        </h2>
+        {/* Título com animação de subida (fade-up) */}
+        <div data-aos="fade-up">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 uppercase tracking-tighter">
+            Nossos <span className="text-[#c5a47e]">Serviços</span>
+            </h2>
 
-        <p className="text-gray-400 mb-16 max-w-2xl mx-auto text-lg">
-          Soluções completas em construção e reforma para seu projeto
-        </p>
+            <p className="text-gray-400 mb-16 max-w-2xl mx-auto text-lg">
+            Soluções completas em construção e reforma para seu projeto
+            </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
           {servicesData.map((service, index) => (
             <div
               key={index}
-              // Mudança: Fundo levemente mais claro que o da seção, bordas quadradas
-              className="bg-[#161616] p-10 border border-white/5 relative group hover:border-[#c5a47e]/50 transition-all duration-500"
+              // Aqui usamos o zoom-in e o delay, igualzinho ao código da Gallery
+              data-aos="zoom-in" 
+              data-aos-delay={index * 100}
+              className="bg-[#161616] p-10 border border-white/5 relative group overflow-hidden flex flex-col justify-between min-h-[320px]"
             >
-              {service.popular && (
-                <span className="absolute top-0 right-0 bg-[#c5a47e] text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
-                  Destaque
-                </span>
-              )}
+              {/* Overlay de Hover suave */}
+              <div className="absolute inset-0 bg-[#c5a47e]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
 
-              {/* Ícone com tom dourado suave */}
-              <div className="w-16 h-16 bg-[#1a1a1a] border border-[#c5a47e]/20 flex items-center justify-center mb-8 text-[#c5a47e] group-hover:bg-[#c5a47e] group-hover:text-black transition-all duration-300">
-                {service.icon}
+              <div className="relative z-10">
+                {service.popular && (
+                  <span className="absolute -top-4 -right-4 bg-[#c5a47e] text-black text-[10px] font-bold px-4 py-1 uppercase tracking-widest">
+                    Destaque
+                  </span>
+                )}
+
+                {/* Ícone que escala no hover */}
+                <div className="w-16 h-16 bg-white/5 border border-[#c5a47e]/20 flex items-center justify-center mb-8 text-[#c5a47e] group-hover:scale-110 transition-transform duration-500">
+                  {service.icon}
+                </div>
+
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#c5a47e] transition-colors uppercase tracking-tight">
+                  {service.title}
+                </h3>
+
+                <p className="text-gray-400 leading-relaxed text-sm group-hover:text-gray-200 transition-colors">
+                  {service.description}
+                </p>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#c5a47e] transition-colors">
-                {service.title}
-              </h3>
-
-              <p className="text-gray-400 leading-relaxed text-sm group-hover:text-gray-300 transition-colors">
-                {service.description}
-              </p>
-
-              {/* Detalhe visual: linha decorativa que cresce no hover */}
-              <div className="mt-6 w-8 h-[2px] bg-[#c5a47e] group-hover:w-full transition-all duration-500"></div>
+              {/* A LINHA DOURADA: Usando scale-x-0 como na sua Galeria */}
+              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#c5a47e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-20"></div>
             </div>
           ))}
         </div>
