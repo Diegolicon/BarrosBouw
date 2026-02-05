@@ -30,9 +30,9 @@ export default function ContactSection() {
               <h3 className="text-sm font-bold mb-12 uppercase tracking-[0.3em] text-[#c5a47e] ml-4">Canais de Atendimento</h3>
               
               <div className="space-y-10 ml-4">
-                <ContactInfo icon={<PhoneIcon />} label="Telefone" value="+31 12 345 6789" />
-                <ContactInfo icon={<WhatsAppIcon />} label="WhatsApp" value="+31 12 345 6789" isWhatsApp />
-                <ContactInfo icon={<MailIcon />} label="E-mail" value="contato@barrosbouw.nl" />
+                <ContactInfo icon={<PhoneIcon />} label="Telefone" value="+31 687111175" />
+                <ContactInfo icon={<WhatsAppIcon />} label="WhatsApp" value="+31 685545494" isWhatsApp />
+                <ContactInfo icon={<MailIcon />} label="E-mail" value="barrosbouw@gmail.com" />
                 <ContactInfo icon={<MapIcon />} label="Localização" value="Amsterdam, Holanda" />
               </div>
             </div>

@@ -50,9 +50,6 @@ export default function Hero() {
                             className="bg-[#c5a47e] hover:bg-[#b3936a] text-black font-bold py-4 px-10 rounded-sm text-lg transition duration-300 shadow-xl flex items-center"
                         >
                             Orçamento Grátis
-                            <span className="ml-3 bg-black text-[#c5a47e] px-2 py-0.5 rounded text-xs font-black uppercase">
-                                30% OFF
-                            </span>
                         </a>
                         
                         {/* Botão Secundário: Ghost button com borda branca sutil */}
