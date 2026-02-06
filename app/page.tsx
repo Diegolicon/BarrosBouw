@@ -1,36 +1,31 @@
 // app/page.tsx
-
-// 1. Nossas importações de componentes
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/ContactSection';
-/*
- * Documentação da Página Home
- * Esta é a página principal (rota "/") do nosso site.
-*/
+
 export default function Home() {
     return (
         <main className="min-h-screen flex-col items-center justify-between">
+            {/* O Hero geralmente é o "Home" */}
+            <section id="home">
+                <Hero />
+            </section>
 
-            {/* Seção 1: Hero */}
-            <Hero />
+            <section id="serviços">
+                <Services />
+            </section>
 
-            {/* Seção 2: Serviços */}
-            <Services />
+            <section id="galeria">
+                <Gallery />
+            </section>
 
-            {/* Seção 3: Galeria */}
-            <Gallery />
+            <Testimonials /> 
 
-            {/* Seção 4: Depoimentos */}
-            <Testimonials /> {/* <-- Adicionamos os Depoimentos aqui */}
-
-            <Contact/>
-            {/* PRÓXIMOS PASSOS:
-        A última parte seria o Rodapé (Footer).
-      */}
-            {/* <Footer /> */}
+            <section id="contato">
+                <Contact/>
+            </section>
         </main>
     );
 }

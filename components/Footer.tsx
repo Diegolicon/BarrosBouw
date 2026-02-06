@@ -22,7 +22,7 @@ export default function Footer() {
               {[
                 { icon: <FacebookIcon />, href: "https://www.facebook.com/share/183MdnKmaa/?mibextid=wwXIfr" },
                 { icon: <InstagramIcon />, href: "https://www.instagram.com/barrosbouw" },
-                { icon: <TikTokIcon />, href: "https://www.tiktok.com/@barrosbouw" }
+                { icon: <TikTokIcon />, href: "https://www.tiktok.com/@barros.bouw" }
               ].map((social, index) => (
                 <a 
                   key={index} 

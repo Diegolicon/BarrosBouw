@@ -1,5 +1,7 @@
 "use client";
 
+import Services from '@/components/Services';
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -28,7 +30,9 @@ export default function Navbar() {
                 {/* Logo Estilizado */}
                 <Link href="/" className="group">
                     <span className="text-xl md:text-2xl font-black tracking-tighter text-white">
-                        BARROS <span className="text-[#c5a47e] group-hover:text-white transition-colors">BOUW</span>
+                        <img 
+                            src="/images/LOGO.png"
+                            className="h-10"/>
                     </span>
                     <p className="text-[10px] uppercase tracking-[0.4em] text-[#c5a47e] -mt-1 font-bold">Construction</p>
                 </Link>
@@ -38,7 +42,8 @@ export default function Navbar() {
                     {['Home', 'Serviços', 'Galeria', 'Contato'].map((item) => (
                         <Link 
                             key={item}
-                            href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+                            // Lógica: se for Home vai para #home, senão vai para #servicos, #galeria, etc.
+                            href={`#${item.toLowerCase()}`} 
                             className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-300 hover:text-[#c5a47e] transition-colors"
                         >
                             {item}
@@ -46,7 +51,7 @@ export default function Navbar() {
                     ))}
 
                     <Link
-                        href="/contato"
+                        href="https://wa.me/31687111175"
                         className="bg-[#c5a47e] hover:bg-white text-black text-[11px] uppercase tracking-widest font-black py-3 px-6 rounded-sm transition-all duration-300"
                     >
                         Free Estimate
