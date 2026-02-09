@@ -80,12 +80,7 @@ export default function Footer() {
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-2 group cursor-pointer">
-                    <WhatsAppIcon />
-                    <p className="text-white font-bold text-base group-hover:text-[#c5a47e] transition-colors">
-                      +31 685545494
-                    </p>
-                  </div>
+              
                 </div>
               </li>
               <li className="flex items-start gap-4">

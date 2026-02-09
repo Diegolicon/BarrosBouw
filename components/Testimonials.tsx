@@ -30,7 +30,7 @@ const testimonialsData = [
         role: "Arquiteto",
         location: "Utrecht",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&auto=format&fit=crop",
-        projectImage: "/images/piso2.png",
+        projectImage: "/images/piso4.png",
         review: "Trabalho incrível! O novo piso parece fantástico. Mal posso esperar para usá-los novamente em nosso próximo projeto. Altamente recomendado!"
     },
     {
