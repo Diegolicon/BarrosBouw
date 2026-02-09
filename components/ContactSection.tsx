@@ -108,6 +108,7 @@ export default function ContactSection() {
                     <option className="bg-[#1a1a1a]" value="Reforma Residencial">Reforma Residencial</option>
                     <option className="bg-[#1a1a1a]" value="Construção Comercial">Construção Comercial</option>
                     <option className="bg-[#1a1a1a]" value="Manutenção Estrutural">Manutenção Estrutural</option>
+                    <option className="bg-[#1a1a1a]" value="Outros">Outros</option>
                   </select>
                 </div>
               </div>

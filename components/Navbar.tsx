@@ -31,10 +31,9 @@ export default function Navbar() {
                 <Link href="/" className="group">
                     <span className="text-xl md:text-2xl font-black tracking-tighter text-white">
                         <img 
-                            src="/images/LOGO.png"
-                            className="h-10"/>
+                            src="/images/logo_final.png"
+                            className="h-35"/>
                     </span>
-                    <p className="text-[10px] uppercase tracking-[0.4em] text-[#c5a47e] -mt-1 font-bold">Construction</p>
                 </Link>
 
                 {/* Desktop Navigation */}
