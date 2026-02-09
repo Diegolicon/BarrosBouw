@@ -32,7 +32,7 @@ export default function Navbar() {
                     <span className="text-xl md:text-2xl font-black tracking-tighter text-white">
                         <img 
                             src="/images/logo_final.png"
-                            className="h-35"/>
+                            className="h-25"/>
                     </span>
                 </Link>
 
