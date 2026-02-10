@@ -20,8 +20,8 @@ const testimonialsData = [
         name: "Maria Silva",
         role: "Proprietária",
         location: "Amsterdam",
-        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&h=150&auto=format&fit=crop", 
-        projectImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&h=450&auto=format&fit=crop", 
+        avatar: "/images/foto1_avatar.jpg", 
+        projectImage: "/images/imagem3_avatar.jpeg", 
         review: "Excelente trabalho! A equipe reformou completamente meu banheiro. O resultado superou todas as expectativas. Profissionalismo do início ao fim!"
     },
     {
@@ -29,7 +29,7 @@ const testimonialsData = [
         name: "Carlos Mendes",
         role: "Arquiteto",
         location: "Utrecht",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&auto=format&fit=crop",
+        avatar: "/images/foto2_avatar.jpg",
         projectImage: "/images/piso4.png",
         review: "Trabalho incrível! O novo piso parece fantástico. Mal posso esperar para usá-los novamente em nosso próximo projeto. Altamente recomendado!"
     },
@@ -38,8 +38,8 @@ const testimonialsData = [
         name: "Ana Souza",
         role: "Designer",
         location: "Rotterdam",
-        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&h=150&auto=format&fit=crop",
-        projectImage: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800",
+        avatar: "/images/foto3_avatar.jpg",
+        projectImage: "/images/imagem3_avatar.jpeg",
         review: "Tive uma excelente experiência! Instalação eficiente e equipe muito detalhista. Deixaram a casa impecável e o acabamento é de primeira qualidade."
     }
 ];
