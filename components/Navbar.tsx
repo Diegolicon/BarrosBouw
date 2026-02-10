@@ -9,11 +9,11 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
         
-        // Trava o scroll quando o menu abrir para não "vazar" fundo branco
+        // Impede o scroll da página quando o menu mobile está aberto
         if (isOpen) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -32,31 +32,41 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-300 ${
-                isScrolled || isOpen
-                ? 'bg-[#0f0f0f] shadow-2xl py-3' 
-                : 'bg-[#0f0f0f]/10 backdrop-blur-sm py-5' // Substituí transparent por um preto quase invisível
+            className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-300 bg-[#0f0f0f] ${
+                isScrolled ? 'py-3 shadow-2xl border-b border-white/5' : 'py-5'
             }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
-                {/* Logo */}
+                
+                {/* Logo - Z-index alto para ficar acima de tudo */}
                 <Link href="/" className="relative z-[10001]" onClick={() => setIsOpen(false)}>
-                    <img src="/images/logo_final.png" alt="Logo" className="h-14 md:h-16 w-auto object-contain" />
+                    <img 
+                        src="/images/logo_final.png" 
+                        alt="Logo" 
+                        className="h-14 md:h-20 w-auto object-contain" 
+                    />
                 </Link>
 
-                {/* Desktop */}
+                {/* Desktop Navigation */}
                 <div className="hidden md:flex space-x-8 items-center">
                     {navLinks.map((link) => (
-                        <Link key={link.name} href={link.href} className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-300 hover:text-[#c5a47e] transition-colors">
+                        <Link 
+                            key={link.name} 
+                            href={link.href} 
+                            className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-300 hover:text-[#c5a47e] transition-colors"
+                        >
                             {link.name}
                         </Link>
                     ))}
-                    <Link href="https://wa.me/31687111175" className="bg-[#c5a47e] hover:bg-white text-black text-[11px] uppercase tracking-widest font-black py-3 px-6 rounded-sm transition-all">
+                    <Link
+                        href="https://wa.me/31687111175"
+                        className="bg-[#c5a47e] hover:bg-white text-black text-[11px] uppercase tracking-widest font-black py-3 px-6 rounded-sm transition-all"
+                    >
                         Free Estimate
                     </Link>
                 </div>
 
-                {/* Mobile Toggle */}
+                {/* Mobile Toggle Button */}
                 <div className="md:hidden relative z-[10001]">
                     <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2 focus:outline-none">
                         <div className="w-6 h-5 flex flex-col justify-between items-end">
@@ -68,9 +78,9 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* MENU MOBILE - Forçado Fullscreen e Cor Sólida */}
-            <div className={`fixed inset-0 min-h-screen w-full bg-[#0f0f0f] z-[10000] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
-                isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-full'
+            {/* Menu Mobile - Fundo Preto Sólido e Fullscreen */}
+            <div className={`fixed inset-0 w-full h-screen bg-[#0f0f0f] z-[10000] flex flex-col items-center justify-center transition-all duration-500 ${
+                isOpen ? 'translate-x-0' : 'translate-x-full'
             }`}>
                 <div className="flex flex-col items-center space-y-10">
                     {navLinks.map((link) => (
