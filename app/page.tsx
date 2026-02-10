@@ -1,4 +1,3 @@
-// app/page.tsx
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Gallery from '@/components/Gallery';
@@ -7,12 +6,15 @@ import Contact from '@/components/ContactSection';
 
 export default function Home() {
     return (
-        <main className="min-h-screen flex-col items-center justify-between">
-            {/* O Hero geralmente é o "Home" */}
+        /* O pt-32 empurra o conteúdo para baixo da navbar fixa. 
+           Ajuste o valor conforme necessário */
+        <main className="min-h-screen flex flex-col pt-20 md:pt-28">
+            
             <section id="home">
                 <Hero />
             </section>
 
+            {/* ID sem acento para o link #serviços funcionar corretamente no HTML */}
             <section id="serviços">
                 <Services />
             </section>

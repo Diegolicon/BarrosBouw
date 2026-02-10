@@ -1,7 +1,5 @@
 "use client";
 
-import Services from '@/components/Services';
-
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -17,6 +15,9 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Função para fechar o menu ao clicar em um link
+    const closeMenu = () => setIsOpen(false);
+
     return (
         <nav
             className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
@@ -27,13 +28,13 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
 
-                {/* Logo Estilizado */}
-                <Link href="/" className="group">
-                    <span className="text-xl md:text-2xl font-black tracking-tighter text-white">
-                        <img 
-                            src="/images/logo_final.png"
-                            className="h-25"/>
-                    </span>
+                {/* Logo */}
+                <Link href="/" className="relative z-[120]">
+                    <img 
+                        src="/images/logo_final.png" 
+                        alt="Logo"
+                        className="h-16 md:h-20 w-auto transition-all" // h-25 costuma ser muito grande, ajustado para h-20
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -41,7 +42,6 @@ export default function Navbar() {
                     {['Home', 'Serviços', 'Galeria', 'Contato'].map((item) => (
                         <Link 
                             key={item}
-                            // Lógica: se for Home vai para #home, senão vai para #servicos, #galeria, etc.
                             href={`#${item.toLowerCase()}`} 
                             className="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-300 hover:text-[#c5a47e] transition-colors"
                         >
@@ -57,8 +57,8 @@ export default function Navbar() {
                     </Link>
                 </div>
 
-                {/* Mobile Toggle */}
-                <div className="md:hidden">
+                {/* Mobile Toggle - Z-index alto para ficar acima do overlay */}
+                <div className="md:hidden relative z-[120]">
                     <button 
                         onClick={() => setIsOpen(!isOpen)} 
                         className="text-white p-2 focus:outline-none"
@@ -73,24 +73,24 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Menu Overlay */}
-            <div className={`fixed inset-0 bg-[#0f0f0f] z-[-1] flex flex-col items-center justify-center space-y-8 transition-all duration-500 md:hidden ${
-                isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+            {/* Mobile Menu Overlay - Corrigido Z-index e Visibilidade */}
+            <div className={`fixed inset-0 bg-[#0f0f0f] z-[110] flex flex-col items-center justify-center space-y-8 transition-all duration-500 md:hidden ${
+                isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
             }`}>
                 {['Home', 'Serviços', 'Galeria', 'Contato'].map((item) => (
                     <Link 
                         key={item}
-                        href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                        onClick={() => setIsOpen(false)}
+                        href={`#${item.toLowerCase()}`}
+                        onClick={closeMenu}
                         className="text-2xl uppercase tracking-[0.3em] font-bold text-white hover:text-[#c5a47e]"
                     >
                         {item}
                     </Link>
                 ))}
                 <Link
-                    href="/contato"
-                    onClick={() => setIsOpen(false)}
-                    className="bg-[#c5a47e] text-black font-black py-4 px-10 uppercase tracking-widest"
+                    href="https://wa.me/31687111175"
+                    onClick={closeMenu}
+                    className="bg-[#c5a47e] text-black font-black py-4 px-10 uppercase tracking-widest rounded-sm"
                 >
                     Free Estimate
                 </Link>
