@@ -41,7 +41,7 @@ export default function Navbar() {
                 {/* Logo - Z-index alto para ficar acima de tudo */}
                 <Link href="/" className="relative z-[10001]" onClick={() => setIsOpen(false)}>
                     <img 
-                        src="/images/logo_final.png" 
+                        src="/images/Logo.png" 
                         alt="Logo" 
                         className="h-19 md:h-20 w-auto object-contain" 
                     />
