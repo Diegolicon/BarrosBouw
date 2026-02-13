@@ -52,8 +52,8 @@ export default function Hero() {
                     >
                     {/* Camada de brilho reduzida: Agora escala apenas 20% (1.2) em vez de 100% (2.0) */}
                     <span 
-                        className="absolute inset-0 rounded-sm bg-[#c5a47e] opacity-25 animate-ping pointer-events-none"
-                        style={{ animationIterationCount: 'infinite', transform: 'scale(1.2)' }}
+                        className="absolute inset-0 rounded-sm bg-[#c5a47e] opacity-25 pointer-events-none"
+                        style={{ animation: 'ping-sutil 1.5s cubic-bezier(0, 0, 0.2, 1) infinite' }}
                     ></span>
                     
                     <span className="relative">Orçamento Grátis</span>

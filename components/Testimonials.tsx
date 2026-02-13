@@ -21,7 +21,7 @@ const testimonialsData = [
         role: "Proprietária",
         location: "Amsterdam",
         avatar: "/images/foto1_avatar.jpg", 
-        projectImage: "/images/imagem3_avatar.jpeg", 
+        projectImage: "/images/imagem1_avatar.jpeg", 
         review: "Excelente trabalho! A equipe reformou completamente meu banheiro. O resultado superou todas as expectativas. Profissionalismo do início ao fim!"
     },
     {
@@ -30,8 +30,8 @@ const testimonialsData = [
         role: "Arquiteto",
         location: "Utrecht",
         avatar: "/images/foto2_avatar.jpg",
-        projectImage: "/images/piso4.png",
-        review: "Trabalho incrível! O novo piso parece fantástico. Mal posso esperar para usá-los novamente em nosso próximo projeto. Altamente recomendado!"
+        projectImage: "/images/imagem2_avatar.jpg",
+        review: "Incrível como um piso bem colocado muda tudo! O serviço foi executado com muita excelência e o resultado final ficou limpo, elegante e moderno."
     },
     {
         id: 3,
