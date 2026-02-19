@@ -13,37 +13,35 @@ const StarIcon = () => (
         <path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.09l6.572-.955L10 0l2.939 6.135 6.572.955-4.756 4.455 1.123 6.545z" />
     </svg>
 );
-
 const testimonialsData = [
     {
         id: 1,
-        name: "Maria Silva",
-        role: "Proprietária",
+        name: "Sanne de Vries",
+        role: "Eigenaresse",
         location: "Amsterdam",
         avatar: "/images/foto1_avatar.jpg", 
         projectImage: "/images/imagem1_avatar.jpeg", 
-        review: "Excelente trabalho! A equipe reformou completamente meu banheiro. O resultado superou todas as expectativas. Profissionalismo do início ao fim!"
+        review: "Uitstekend werk! Het team heeft mijn badkamer volledig gerenoveerd. Het resultaat overtrof alle verwachtingen. Professionaliteit van begin tot eind!"
     },
     {
         id: 2,
-        name: "Carlos Mendes",
-        role: "Arquiteto",
+        name: "Bram Bakker",
+        role: "Architect",
         location: "Utrecht",
         avatar: "/images/foto2_avatar.jpg",
         projectImage: "/images/imagem2_avatar.jpg",
-        review: "Incrível como um piso bem colocado muda tudo! O serviço foi executado com muita excelência e o resultado final ficou limpo, elegante e moderno."
+        review: "Ongelooflijk hoe een goed gelegde vloer alles verandert! De service werd met grote uitmuntendheid uitgevoerd en het eindresultaat is strak, elegant en modern."
     },
     {
         id: 3,
-        name: "Ana Souza",
+        name: "Anouk Jansen",
         role: "Designer",
         location: "Rotterdam",
         avatar: "/images/foto3_avatar.jpg",
         projectImage: "/images/imagem3_avatar.jpeg",
-        review: "Tive uma excelente experiência! Instalação eficiente e equipe muito detalhista. Deixaram a casa impecável e o acabamento é de primeira qualidade."
+        review: "Ik had een geweldige ervaring! Efficiënte installatie en een zeer gedetailleerd team. Ze lieten het huis onberispelijk achter en de afwerking is van topkwaliteit."
     }
 ];
-
 export default function Testimonials() {
     return (
         <section className="bg-[#0f0f0f] py-24" id="depoimentos">
@@ -54,7 +52,7 @@ export default function Testimonials() {
                         Feedback
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter uppercase">
-                        O Que Dizem Nossos <span className="text-[#c5a47e]">Clientes</span>
+                        Wat Onze <span className="text-[#c5a47e]">Klanten Zeggen</span>
                     </h2>
                     <div className="w-24 h-1 bg-[#c5a47e] mx-auto opacity-50"></div>
                 </header>
@@ -81,15 +79,13 @@ export default function Testimonials() {
                                     <div className="relative w-full h-56 mb-8 overflow-hidden">
                                         <Image 
                                             src={item.projectImage} 
-                                            alt="Projeto realizado"
+                                            alt="Gerealiseerd project"
                                             fill
                                             className="object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent opacity-60"></div>
                                     </div>
                                 )}
-
-                                {/* Aspas Decorativas */}
 
                                 {/* Texto do Depoimento */}
                                 <div className="flex mb-4 gap-1">

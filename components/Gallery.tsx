@@ -17,11 +17,11 @@ export default function Gallery() {
             <div className="container mx-auto px-6 text-center">
 
                 <h2 className="text-3xl md:text-5xl font-bold mb-4 uppercase tracking-tighter">
-                    Galeria de <span className="text-[#c5a47e]">Projetos</span>
+                    Projecten <span className="text-[#c5a47e]">Galerij</span>
                 </h2>
 
                 <p className="text-lg text-gray-400 mb-16 max-w-xl mx-auto">
-                    A excelência da engenharia holandesa aplicada em cada detalhe.
+                    De uitmuntendheid van Nederlandse techniek toegepast in elk detail.
                 </p>
 
                 {/* Retornado para o GRID original */}
@@ -41,7 +41,7 @@ export default function Gallery() {
                             <div className="w-full h-full relative transition duration-700 group-hover:scale-110">
                                 <Image 
                                     src={item.src} 
-                                    alt={`Projeto ${item.id}`}
+                                    alt={`Project ${item.id}`}
                                     fill 
                                     className="object-cover"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -59,7 +59,7 @@ export default function Gallery() {
                         href="/galeria"
                         className="inline-block border border-[#c5a47e] text-[#c5a47e] hover:bg-[#c5a47e] hover:text-black font-bold py-4 px-12 rounded-sm text-sm uppercase tracking-[0.2em] transition duration-500"
                     >
-                        Explorar Portfólio
+                        Portfolio Ontdekken
                     </Link>
                 </div>
             </div>

@@ -14,7 +14,7 @@ export default function Footer() {
             </div>
             
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-              Elevando o padrão da construção civil na Holanda com precisão técnica e acabamento de luxo desde 2025.
+              Sinds 2025 verhogen wij de standaard van de bouwsector in Nederland met technische precisie en een luxe afwerking.
             </p>
 
             {/* Redes Sociais */}
@@ -39,13 +39,19 @@ export default function Footer() {
 
           {/* Coluna 2: Navegação */}
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-[#c5a47e] mb-8">Navegação</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-[#c5a47e] mb-8">Navigatie</h4>
             <ul className="space-y-4 text-gray-400 text-[13px] font-medium">
-              {['Início', 'Serviços', 'Galeria', 'Depoimentos', 'Contato'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="hover:text-white transition-colors flex items-center gap-2 group">
+              {[
+                { name: 'Home', target: 'home' },
+                { name: 'Diensten', target: 'servicos' },
+                { name: 'Galerij', target: 'galeria' },   
+                { name: 'Reviews', target: 'depoimentos' }, 
+                { name: 'Contact', target: 'contato' }     
+              ].map((item) => (
+                <li key={item.name}>
+                  <a href={`#${item.target}`} className="hover:text-white transition-colors flex items-center gap-2 group">
                     <span className="h-[1px] w-0 bg-[#c5a47e] group-hover:w-4 transition-all duration-300"></span>
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
@@ -54,9 +60,9 @@ export default function Footer() {
 
           {/* Coluna 3: Especialidades */}
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-[#c5a47e] mb-8">Especialidades</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-[#c5a47e] mb-8">Specialismen</h4>
             <ul className="space-y-4 text-gray-400 text-[13px] font-medium">
-              {['Reformas Completas', 'Construção Civil', 'Pintura Premium', 'Marcenaria Fina', 'Design de Interiores'].map((item) => (
+              {['Volledige Renovaties', 'Bouw & Constructie', 'Premium Schilderwerk', 'Fijn Timmerwerk', 'Interieurontwerp'].map((item) => (
                 <li key={item} className="hover:text-white cursor-default transition-colors italic">
                   {item}
                 </li>
@@ -66,12 +72,12 @@ export default function Footer() {
 
           {/* Coluna 4: Contato Direto */}
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-[#c5a47e] mb-8">Contato</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-[#c5a47e] mb-8">Contact</h4>
             <ul className="space-y-6 text-gray-400 text-sm">
               <li className="flex items-start gap-4">
                 <div className="mt-1"><PhoneIconSmall /></div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest opacity-50 mb-2">Telefone & WhatsApp</p>
+                  <p className="text-[10px] uppercase tracking-widest opacity-50 mb-2">Telefoon & WhatsApp</p>
                   
                   <div className="flex items-center gap-2 mb-2 group cursor-pointer">
                     <WhatsAppIcon />
@@ -79,8 +85,6 @@ export default function Footer() {
                       +31 687111175
                     </p>
                   </div>
-
-              
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -93,7 +97,7 @@ export default function Footer() {
               <li className="flex items-start gap-4">
                 <div className="mt-1"><MapIconSmall /></div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest opacity-50 mb-1">Escritório</p>
+                  <p className="text-[10px] uppercase tracking-widest opacity-50 mb-1">Kantoor</p>
                   <p className="text-white font-bold leading-tight">Amsterdam, Noord-Holland</p>
                 </div>
               </li>
@@ -105,16 +109,14 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] uppercase tracking-widest text-gray-600">
           <p className="text-center md:text-left">© 2025 <span className="text-gray-400">Barros Bouw</span>. Built for Excellence.</p>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-[#c5a47e] transition-colors tracking-widest">Privacidade</a>
-            <a href="#" className="hover:text-[#c5a47e] transition-colors tracking-widest">Termos</a>
+            <a href="#" className="hover:text-[#c5a47e] transition-colors tracking-widest">Privacybeleid</a>
+            <a href="#" className="hover:text-[#c5a47e] transition-colors tracking-widest">Voorwaarden</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-
-// --- ÍCONES (CORRIGIDOS) ---
 
 const TikTokIcon = () => (
   <svg 

@@ -2,10 +2,9 @@ export default function FloatingButtons() {
   return (
     <div className="fixed bottom-6 right-6 flex flex-col items-center gap-2 z-[100]">
       
-      {/* Card "Contate-nos" */}
       <div className="animate-bounce bg-[#003358] text-white text-[10px] font-bold py-1.5 px-3 rounded-lg shadow-xl uppercase tracking-wider mb-1 border border-white/10">
-        Contate-nos
-      </div>
+  Neem contact op
+</div>
 
       <div className="flex flex-col gap-3">
         

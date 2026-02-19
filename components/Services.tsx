@@ -2,8 +2,8 @@
 
 const servicesData = [
   {
-    title: "Reformas Completas",
-    description: "Transformamos seu espaço completamente com planejamento e execução de alta qualidade.",
+    title: "Complete Renovaties",
+    description: "Wij transformeren uw ruimte volledig met hoogwaardige planning en uitvoering.",
     popular: true,
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -12,8 +12,8 @@ const servicesData = [
     )
   },
   {
-    title: "Pintura Profissional",
-    description: "Pintura interna e externa com acabamento profissional e materiais de primeira.",
+    title: "Professioneel Schilderwerk",
+    description: "Binnen- en buitenschilderwerk met een professionele afwerking en eersteklas materialen.",
     popular: false,
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -22,8 +22,8 @@ const servicesData = [
     )
   },
   {
-    title: "Marcenaria",
-    description: "Móveis planejados e sob medida para otimizar seu espaço com estilo.",
+    title: "Timmerwerk",
+    description: "Maatwerk meubels en interieurbouw om uw ruimte met stijl te optimaliseren.",
     popular: true,
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,8 +33,8 @@ const servicesData = [
     )
   },
   {
-    title: "Hidráulica e Elétrica",
-    description: "Instalações e reparos com segurança e garantia de qualidade.",
+    title: "Loodgieterswerk & Elektra",
+    description: "Installaties en reparaties met veiligheid en kwaliteitsgarantie.",
     popular: false,
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,8 +44,8 @@ const servicesData = [
     )
   },
   {
-  title: "Gesso & Iluminação",
-  description: "Acabamentos em drywall, sancas e projetos luminotécnicos que valorizam cada detalhe do ambiente.",
+  title: "Stucwerk & Verlichting",
+  description: "Afwerking in drywall, kooflijsten en lichtplannen die elk detail van de ruimte accentueren.",
   popular: false,
   icon: (
     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,8 +54,8 @@ const servicesData = [
   )
 },
 {
-    title: "Cozinhas & Banheiros",
-    description: "Especialização em áreas molhadas com foco em funcionalidade, revestimentos e acabamento premium.",
+    title: "Keukens & Badkamers",
+    description: "Specialisatie in natte ruimtes met focus op functionaliteit, betegeling en premium afwerking.",
     popular: true,
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,8 +65,8 @@ const servicesData = [
     )
   },
   {
-    title: "Construção",
-    description: "Construímos seu projeto do zero com qualidade e prazo garantidos.",
+    title: "Bouw",
+    description: "Wij bouwen uw project vanaf nul met gegarandeerde kwaliteit en binnen de deadline.",
     popular: true,
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,8 +75,8 @@ const servicesData = [
     )
   },
   {
-    title: "Consultoria",
-    description: "Orientação profissional para planejar e executar seu projeto perfeitamente.",
+    title: "Consultancy",
+    description: "Professionele begeleiding bij het plannen en uitvoeren van uw project tot in de perfectie.",
     popular: false,
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,30 +85,28 @@ const servicesData = [
     )
   }
 ];
+
 export default function Services() {
   return (
     <section className="bg-[#0f0f0f] py-24 px-6 overflow-hidden" id="servicos">
-      {/* Aumentei o max-w para 1400px para os 4 cards respirarem melhor */}
       <div className="container mx-auto max-w-[1400px] text-center">
         
         <div data-aos="fade-up">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 uppercase tracking-tighter">
-              Nossos <span className="text-[#c5a47e]">Serviços</span>
+              Onze <span className="text-[#c5a47e]">Diensten</span>
             </h2>
 
             <p className="text-gray-400 mb-16 max-w-2xl mx-auto text-lg">
-              Soluções completas em construção e reforma para seu projeto
+              Complete oplossingen in bouw en renovatie voor uw project
             </p>
         </div>
 
-        {/* Gap aumentado para 8 (32px) para separar bem os cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
           {servicesData.map((service, index) => (
             <div
               key={index}
               data-aos="zoom-in" 
               data-aos-delay={index * 100}
-              // Padding aumentado para p-10 e altura mínima ajustada
               className="bg-[#161616] p-10 border border-white/5 relative group overflow-hidden flex flex-col justify-between min-h-[350px] transition-all duration-300 hover:border-[#c5a47e]/30"
             >
               <div className="absolute inset-0 bg-[#c5a47e]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
@@ -116,7 +114,7 @@ export default function Services() {
               <div className="relative z-10">
                 {service.popular && (
                   <span className="absolute -top-6 -right-6 bg-[#c5a47e] text-black text-[10px] font-bold px-4 py-1 uppercase tracking-widest shadow-lg">
-                    Destaque
+                    Populair
                   </span>
                 )}
 

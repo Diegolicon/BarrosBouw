@@ -7,7 +7,7 @@ export default function Hero() {
             <div className="absolute inset-0 z-0">
                 <img 
                     src="/images/imageFirst.png" 
-                    alt="Background" 
+                    alt="Achtergrond" 
                     className="w-full h-full object-cover opacity-60" // Reduzi a opacidade para o texto brilhar
                 />
 
@@ -23,9 +23,9 @@ export default function Hero() {
                         data-aos="fade-right"
                         data-aos-duration="800"
                     >
-                        Construa seus <br /> 
+                        Bouw uw <br /> 
                         {/* Trocado de Green-500 para um Dourado/Sand (#c5a47e) */}
-                        <span className="text-[#c5a47e]">próprios sonhos</span>
+                        <span className="text-[#c5a47e]">eigen dromen</span>
                     </h1>
 
                     <p 
@@ -35,8 +35,8 @@ export default function Hero() {
                         data-aos-delay="200"
                         data-aos-duration="800"
                     >
-                        Na Barros Bouw, transformamos sua visão em realidade com soluções 
-                        customizadas que combinam precisão e design.
+                        Bij Barros Bouw transformeren we uw visie naar realiteit met 
+                        op maat gemaakte oplossingen die precisie en design combineren.
                     </p>
 
                     <div 
@@ -56,7 +56,7 @@ export default function Hero() {
                         style={{ animation: 'ping-sutil 1.5s cubic-bezier(0, 0, 0.2, 1) infinite' }}
                     ></span>
                     
-                    <span className="relative">Orçamento Grátis</span>
+                    <span className="relative">Gratis Offerte</span>
                     
                     <svg 
                         className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" 
@@ -67,10 +67,10 @@ export default function Hero() {
                     </a>
                         {/* Botão Secundário: Ghost button com borda branca sutil */}
                         <a
-                            href="#projetos"
+                            href="#galeria"
                             className="border border-white/30 hover:border-white hover:bg-white/10 text-white font-medium py-4 px-10 rounded-sm text-lg transition duration-300"
                         >
-                            Ver Projetos
+                            Projecten Bekijken
                         </a>
                     </div>
                 </div>

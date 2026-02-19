@@ -7,7 +7,7 @@ export default function ContactSection() {
     nome: '',
     email: '',
     whatsapp: '',
-    servico: 'Não selecionado',
+    servico: 'Niet geselecteerd',
     detalhes: ''
   });
 
@@ -18,12 +18,13 @@ export default function ContactSection() {
   const handleSendWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
     const phoneNumber = "31687111175";
-    const text = `*Nova Solicitação de Orçamento*%0A` +
-                 `*Nome:* ${formData.nome}%0A` +
+    // Traduzido os rótulos da mensagem para o holandês
+    const text = `*Nieuwe Offerteaanvraag*%0A` +
+                 `*Naam:* ${formData.nome}%0A` +
                  `*E-mail:* ${formData.email}%0A` +
                  `*WhatsApp:* ${formData.whatsapp}%0A` +
-                 `*Serviço:* ${formData.servico}%0A` +
-                 `*Detalhes:* ${formData.detalhes}`;
+                 `*Dienst:* ${formData.servico}%0A` +
+                 `*Details:* ${formData.detalhes}`;
 
     window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
   };
@@ -34,9 +35,9 @@ export default function ContactSection() {
 
       <div className="container mx-auto max-w-6xl">
         <div data-aos="fade-up" className="mb-20 text-center">
-          <p className="text-[#c5a47e] text-[11px] uppercase tracking-[0.5em] font-bold mb-4">Contato</p>
+          <p className="text-[#c5a47e] text-[11px] uppercase tracking-[0.5em] font-bold mb-4">Contact</p>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter">
-            Solicite seu <span className="text-[#c5a47e]">Orçamento</span>
+            Vraag uw <span className="text-[#c5a47e]">Offerte aan</span>
           </h2>
           <div className="w-24 h-[1px] bg-[#c5a47e] mx-auto mb-8"></div>
         </div>
@@ -49,7 +50,7 @@ export default function ContactSection() {
               
               <div className="mb-10">
                 <h3 className="text-sm font-bold mb-8 uppercase tracking-[0.3em] text-[#c5a47e] ml-4">
-                  Canais de Atendimento
+                  Klantenservice Kanalen
                 </h3>
                 
                 <div className="space-y-6 ml-4">
@@ -67,18 +68,18 @@ export default function ContactSection() {
                   />
                   <ContactInfo 
                     icon={<MapIcon />} 
-                    label="Localização" 
-                    value="Amsterdam, Holanda" 
+                    label="Locatie" 
+                    value="Amsterdam, Nederland" 
                   />
                 </div>
               </div>
 
               <div className="bg-[#c5a47e] p-8 rounded-sm shadow-xl">
                 <h4 className="font-black text-black mb-5 uppercase text-[11px] tracking-widest">
-                  Compromisso Barros Bouw
+                  Barros Bouw Belofte
                 </h4>
                 <ul className="grid grid-cols-2 gap-y-4 gap-x-2">
-                  {['Orçamento em 24h', 'Garantia Técnica', 'Prazos Rigorosos', 'Mão de Obra Elite'].map((item) => (
+                  {['Offerte binnen 24u', 'Technische Garantie', 'Strikte Deadlines', 'Elite Vakmanschap'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-black/90 text-[10px] font-bold uppercase tracking-tighter">
                       <div className="w-1.5 h-1.5 bg-black rounded-full shrink-0" /> {item}
                     </li>
@@ -91,41 +92,41 @@ export default function ContactSection() {
           <div className="lg:col-span-7 bg-white/[0.02] p-10 rounded-sm border border-white/5 shadow-2xl" data-aos="fade-left">
             <form onSubmit={handleSendWhatsApp} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <InputField label="Nome Completo *" name="nome" type="text" placeholder="Ex: Jan van Dijk" required onChange={handleChange} />
-                <InputField label="E-mail *" name="email" type="email" placeholder="contato@empresa.com" required onChange={handleChange} />
+                <InputField label="Volledige Naam *" name="nome" type="text" placeholder="Bijv: Jan van Dijk" required onChange={handleChange} />
+                <InputField label="E-mail *" name="email" type="email" placeholder="contact@bedrijf.com" required onChange={handleChange} />
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <InputField label="WhatsApp *" name="whatsapp" type="text" placeholder="+31 00 000 0000" required onChange={handleChange} />
                 <div className="flex flex-col">
-                  <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#c5a47e] mb-3">Serviço *</label>
+                  <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#c5a47e] mb-3">Dienst *</label>
                   <select 
                     name="servico"
                     onChange={handleChange}
                     className="w-full p-4 bg-white/5 border border-white/10 focus:border-[#c5a47e] text-white outline-none text-sm transition-all rounded-sm appearance-none cursor-pointer"
                   >
-                    <option className="bg-[#1a1a1a]" value="">Selecione o serviço</option>
-                    <option className="bg-[#1a1a1a]" value="Reforma Residencial">Reforma Residencial</option>
-                    <option className="bg-[#1a1a1a]" value="Construção Comercial">Construção Comercial</option>
-                    <option className="bg-[#1a1a1a]" value="Manutenção Estrutural">Manutenção Estrutural</option>
-                    <option className="bg-[#1a1a1a]" value="Outros">Outros</option>
+                    <option className="bg-[#1a1a1a]" value="">Selecteer een dienst</option>
+                    <option className="bg-[#1a1a1a]" value="Woningrenovatie">Woningrenovatie</option>
+                    <option className="bg-[#1a1a1a]" value="Commerciële Bouw">Commerciële Bouw</option>
+                    <option className="bg-[#1a1a1a]" value="Structureel Onderhoud">Structureel Onderhoud</option>
+                    <option className="bg-[#1a1a1a]" value="Overig">Overig</option>
                   </select>
                 </div>
               </div>
 
               <div className="flex flex-col">
-                <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#c5a47e] mb-3">Detalhes do Projeto *</label>
+                <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#c5a47e] mb-3">Projectdetails *</label>
                 <textarea 
                   name="detalhes"
                   onChange={handleChange}
-                  placeholder="Descreva brevemente sua necessidade..." 
+                  placeholder="Beschrijf kort uw behoeften..." 
                   className="w-full p-4 bg-white/5 border border-white/10 focus:border-[#c5a47e] text-white outline-none text-sm transition-all rounded-sm resize-none min-h-[150px]"
                 />
               </div>
 
               <button type="submit" className="group relative w-full overflow-hidden bg-[#c5a47e] text-black font-black py-6 transition-all uppercase tracking-[0.3em] text-xs">
                 <span className="relative z-10 flex items-center justify-center gap-3 group-hover:gap-5 transition-all">
-                  Enviar Solicitação <ArrowRightIcon />
+                  Verstuur Aanvraag <ArrowRightIcon />
                 </span>
                 <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
@@ -138,6 +139,7 @@ export default function ContactSection() {
   );
 }
 
+// Funções auxiliares (ContactInfo, InputField, ícones) permanecem iguais estruturalmente
 function ContactInfo({ icon, label, value, href }: any) {
   const content = (
     <div className="flex items-center gap-6 group cursor-pointer">

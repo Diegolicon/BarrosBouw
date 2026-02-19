@@ -23,11 +23,12 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [isOpen]);
 
+    // Tradução dos links de navegação
     const navLinks = [
         { name: 'Home', href: '#home' },
-        { name: 'Serviços', href: '#servicos' },
-        { name: 'Galeria', href: '#galeria' },
-        { name: 'Contato', href: '#contato' },
+        { name: 'Diensten', href: '#servicos' }, // Serviços -> Diensten
+        { name: 'Galerij', href: '#galeria' },  // Galeria -> Galerij
+        { name: 'Contact', href: '#contato' },  // Contato -> Contact
     ];
 
     return (
@@ -39,7 +40,7 @@ export default function Navbar() {
             <div className="container mx-auto px-6 flex justify-between items-center">
                 
                 {/* Logo - Z-index alto para ficar acima de tudo */}
-                <Link href="/" className="relative z-[10001]" onClick={() => setIsOpen(false)}>
+                <Link href="#home" className="relative z-[10001]" onClick={() => setIsOpen(false)}>
                     <img 
                         src="/images/LOGO.png" 
                         alt="Logo" 
@@ -62,7 +63,7 @@ export default function Navbar() {
                         href="https://wa.me/31687111175"
                         className="bg-[#c5a47e] hover:bg-white text-black text-[11px] uppercase tracking-widest font-black py-3 px-6 rounded-sm transition-all"
                     >
-                        Free Estimate
+                        Gratis Offerte {/* Free Estimate -> Gratis Offerte */}
                     </Link>
                 </div>
 
@@ -98,7 +99,7 @@ export default function Navbar() {
                         onClick={() => setIsOpen(false)}
                         className="bg-[#c5a47e] text-black font-black py-5 px-12 uppercase tracking-widest text-sm rounded-sm"
                     >
-                        Free Estimate
+                        Gratis Offerte
                     </Link>
                 </div>
             </div>
