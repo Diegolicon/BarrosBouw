@@ -15,7 +15,7 @@ export default function FloatingButtons() {
           </span>
           
           <a
-            href="https://wa.me/31687111175"
+            href="https://wa.me/31687111175?text=Hallo,%20ik%20wil%20graag%20een%20offerte%20aanvragen"
             target="_blank"
             rel="noopener noreferrer"
             className="relative bg-[#25D366] text-white p-4 rounded-full shadow-lg transition-all hover:scale-110 hover:shadow-[#25D366]/40 active:scale-95 flex items-center justify-center"

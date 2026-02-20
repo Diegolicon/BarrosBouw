@@ -60,7 +60,7 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <Link
-                        href="https://wa.me/31687111175"
+                        href="https://wa.me/31687111175?text=Hallo,%20ik%20wil%20graag%20een%20offerte%20aanvragen"
                         className="bg-[#c5a47e] hover:bg-white text-black text-[11px] uppercase tracking-widest font-black py-3 px-6 rounded-sm transition-all"
                     >
                         Gratis Offerte {/* Free Estimate -> Gratis Offerte */}
@@ -95,7 +95,7 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <Link
-                        href="https://wa.me/31687111175"
+                        href="https://wa.me/31687111175?text=Hallo,%20ik%20wil%20graag%20een%20offerte%20aanvragen"
                         onClick={() => setIsOpen(false)}
                         className="bg-[#c5a47e] text-black font-black py-5 px-12 uppercase tracking-widest text-sm rounded-sm"
                     >
