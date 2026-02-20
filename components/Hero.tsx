@@ -47,7 +47,7 @@ export default function Hero() {
                         
                      {/* Botão Principal: Orçamento Grátis com efeito Pulsante */}
                     <a
-                    href="/contato"
+                    href="https://wa.me/31687111175"
                     className="relative bg-[#c5a47e] hover:bg-[#b3936a] text-black font-bold py-4 px-10 rounded-sm text-lg transition duration-300 shadow-xl flex items-center group"
                     >
                     {/* Camada de brilho reduzida: Agora escala apenas 20% (1.2) em vez de 100% (2.0) */}
