@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 const galleryData = [
     { id: 1, src: "/images/banheiro.png" },
-    { id: 2, src: "/images/pisoAquecido.jpeg" },
+    { id: 2, src: "/images/novobanheiro1.jpeg" },
     { id: 3,  src: "/images/cozinha.jpeg" },
     { id: 4,  src: "/images/revestimento.jpeg" },
-    { id: 5,  src: "/images/armario3.jpeg" },
-    { id: 6,  src: "/images/armario2.jpeg" }
+    { id: 5,  src: "/images/portifolio.jpeg" },
+    { id: 6,  src: "/images/portifolio2.jpeg" }
 ];
 
 export default function Gallery() {

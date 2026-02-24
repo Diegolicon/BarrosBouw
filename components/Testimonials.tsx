@@ -29,8 +29,8 @@ const testimonialsData = [
         role: "Architect",
         location: "Utrecht",
         avatar: "/images/foto2_avatar.jpg",
-        projectImage: "/images/imagem2_avatar.jpg",
-        review: "Ongelooflijk hoe een goed gelegde vloer alles verandert! De service werd met grote uitmuntendheid uitgevoerd en het eindresultaat is strak, elegant en modern."
+        projectImage: "/images/banheiro10.jpeg",
+        review: "Prachtig werk! De keuken is vakkundig geplaatst met oog voor detail. Alles is netjes achtergelaten en de afwerking is top. Erg tevreden!"
     },
     {
         id: 3,
@@ -38,8 +38,8 @@ const testimonialsData = [
         role: "Designer",
         location: "Rotterdam",
         avatar: "/images/foto3_avatar.jpg",
-        projectImage: "/images/imagem3_avatar.jpeg",
-        review: "Ik had een geweldige ervaring! Efficiënte installatie en een zeer gedetailleerd team. Ze lieten het huis onberispelijk achter en de afwerking is van topkwaliteit."
+        projectImage: "/images/novobanheiro.jpeg",
+        review: "Prachtig resultaat! De installatie verliep vlekkeloos met veel oog voor detail. Alles werd keurig achtergelaten en de afwerking is van absoluut topniveau. Zeer tevreden!"
     }
 ];
 export default function Testimonials() {
