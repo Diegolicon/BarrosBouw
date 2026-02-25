@@ -8,7 +8,10 @@ const galleryData = [
     { id: 3,  src: "/images/cozinha.jpeg" },
     { id: 4,  src: "/images/revestimento.jpeg" },
     { id: 5,  src: "/images/portifolio.jpeg" },
-    { id: 6,  src: "/images/portifolio2.jpeg" }
+    { id: 6,  src: "/images/portifolio2.jpeg" },
+    { id: 7,  src: "/images/comentario4.jpeg" },
+    { id: 8,  src: "/images/comentario5.jpeg" },
+    { id: 9,  src: "/images/ultima.jpeg" },
 ];
 
 export default function Gallery() {

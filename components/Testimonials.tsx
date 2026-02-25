@@ -13,13 +13,13 @@ const StarIcon = () => (
         <path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.09l6.572-.955L10 0l2.939 6.135 6.572.955-4.756 4.455 1.123 6.545z" />
     </svg>
 );
+
 const testimonialsData = [
     {
         id: 1,
         name: "Sanne de Vries",
         role: "Eigenaresse",
         location: "Amsterdam",
-        avatar: "/images/foto1_avatar.jpg", 
         projectImage: "/images/imagem1_avatar.jpeg", 
         review: "Uitstekend werk! Het team heeft mijn badkamer volledig gerenoveerd. Het resultaat overtrof alle verwachtingen. Professionaliteit van begin tot eind!"
     },
@@ -28,26 +28,68 @@ const testimonialsData = [
         name: "Bram Bakker",
         role: "Architect",
         location: "Utrecht",
-        avatar: "/images/foto2_avatar.jpg",
         projectImage: "/images/banheiro10.jpeg",
         review: "Prachtig werk! De keuken is vakkundig geplaatst met oog voor detail. Alles is netjes achtergelaten en de afwerking is top. Erg tevreden!"
+    },
+    {
+        id: 5,
+        name: "Thomas de Boer",
+        role: "Klant",
+        location: "Leiden",
+        projectImage: "/images/comentario1.jpeg",
+        review: "Vakmanschap ten top. De renovatie van onze woonkamer is precies geworden zoals we hadden gehoopt. De communicatie was ook uitstekend."
     },
     {
         id: 3,
         name: "Anouk Jansen",
         role: "Designer",
         location: "Rotterdam",
-        avatar: "/images/foto3_avatar.jpg",
         projectImage: "/images/novobanheiro.jpeg",
         review: "Prachtig resultaat! De installatie verliep vlekkeloos met veel oog voor detail. Alles werd keurig achtergelaten en de afwerking is van absoluut topniveau. Zeer tevreden!"
+    },
+    
+    // --- NOVOS ITENS ADICIONADOS ABAIXO ---
+    
+    {
+        id: 6,
+        name: "Sophie Molenaar",
+        role: "Designer",
+        location: "Den Haag",
+        projectImage: "/images/comentario2.jpeg",
+        review: "Zeer onder de indruk van de kwaliteit en de snelheid van het werk. De details in de afwerking maken echt het verschil in ons nieuwe kantoor."
+    },
+    {
+        id: 7,
+        name: "Mark van Dijk",
+        role: "Huiseigenaar",
+        location: "Delft",
+        projectImage: "/images/comentario3.jpeg",
+        review: "Betrouwbaar team dat hun afspraken nakomt. De vloer en de muren zien er fantastisch uit. Een absolute aanrader voor elke verbouwing!"
+    },
+    {
+        id: 12,
+        name: "Rick Heinen",
+        role: "Huiseigenaar",
+        location: "Zaandam",
+        projectImage: "/images/pisoAquecido.jpeg",
+        review: "Professionele aanpak en een resultaat dat mag worden gezien. Het team werkt schoon, snel en is erg vriendelijk. Top service!"
+    },
+    {
+        id: 4,
+        name: "Lars Visser",
+        role: "Huiseigenaar",
+        location: "Haarlem",
+        projectImage: "/images/stuck.jpeg",
+        review: "Geweldig stucwerk! De muren zijn perfect glad en strak afgewerkt. Het team werkte netjes e tudo foi rápido. Echt vakmanschap van hoog niveau!"
     }
 ];
+
 export default function Testimonials() {
     return (
         <section className="bg-[#0f0f0f] py-24" id="depoimentos">
-            <div className="container mx-auto px-6 text-center">
+            <div className="container mx-auto px-6">
                 
-                <header data-aos="fade-up" className="mb-20">
+                <header data-aos="fade-up" className="mb-20 text-center">
                     <span className="text-[#c5a47e] text-xs font-bold tracking-[0.3em] uppercase block mb-4">
                         Feedback
                     </span>
@@ -59,7 +101,7 @@ export default function Testimonials() {
 
                 <Swiper
                     modules={[Pagination, Autoplay]}
-                    spaceBetween={40}
+                    spaceBetween={30}
                     slidesPerView={1}
                     autoplay={{ delay: 5000 }}
                     pagination={{ clickable: true }}
@@ -72,43 +114,39 @@ export default function Testimonials() {
                 >
                     {testimonialsData.map((item) => (
                         <SwiperSlide key={item.id} className="h-auto">
-                            <div className="bg-[#1a1a1a] p-8 rounded-sm h-full flex flex-col border border-white/5 relative group hover:border-[#c5a47e]/30 transition-all duration-500">
+                            <div className="bg-[#1a1a1a] p-0 rounded-sm h-full flex flex-col border border-white/5 relative group hover:border-[#c5a47e]/30 transition-all duration-500 overflow-hidden">
                                 
-                                {/* Foto do Projeto com Overlay */}
+                                {/* Foto do Projeto - Aumentada (h-72) e sem bordas internas */}
                                 {item.projectImage && (
-                                    <div className="relative w-full h-56 mb-8 overflow-hidden">
+                                    <div className="relative w-full h-72 overflow-hidden">
                                         <Image 
                                             src={item.projectImage} 
                                             alt="Gerealiseerd project"
                                             fill
-                                            className="object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                            className="object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent opacity-60"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent opacity-80"></div>
                                     </div>
                                 )}
 
-                                {/* Texto do Depoimento */}
-                                <div className="flex mb-4 gap-1">
-                                    {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
-                                </div>
-                                
-                                <p className="text-gray-400 text-sm leading-relaxed mb-10 flex-grow italic font-light">
-                                    "{item.review}"
-                                </p>
-
-                                {/* Perfil do Cliente */}
-                                <div className="flex items-center gap-4 pt-6 border-t border-white/5">
-                                    <div className="relative w-12 h-12 rounded-full overflow-hidden border border-[#c5a47e]/50">
-                                        <Image 
-                                            src={item.avatar} 
-                                            alt={item.name}
-                                            fill
-                                            className="object-cover grayscale"
-                                        />
+                                {/* Conteúdo do Card com Padding */}
+                                <div className="p-8 flex flex-col flex-grow">
+                                    <div className="flex mb-4 gap-1">
+                                        {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
                                     </div>
-                                    <div className="text-left">
-                                        <h4 className="font-bold text-white text-xs uppercase tracking-widest">{item.name}</h4>
-                                        <p className="text-[10px] text-[#c5a47e] font-medium opacity-80">{item.role} • {item.location}</p>
+                                    
+                                    <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-grow italic font-light">
+                                        "{item.review}"
+                                    </p>
+
+                                    {/* Perfil do Cliente - Sem Avatar */}
+                                    <div className="pt-6 border-t border-white/5">
+                                        <div className="text-left">
+                                            <h4 className="font-bold text-white text-xs uppercase tracking-widest">{item.name}</h4>
+                                            <p className="text-[10px] text-[#c5a47e] font-medium opacity-80 mt-1">
+                                                {item.role} • {item.location}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
