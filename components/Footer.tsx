@@ -91,7 +91,7 @@ export default function Footer() {
                 <div className="mt-1"><MailIconSmall /></div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest opacity-50 mb-1">E-mail</p>
-                  <p className="text-white font-bold text-base hover:text-[#c5a47e] transition-colors cursor-pointer text-[13px]">barrosbouw@gmail.com</p>
+                  <p className="text-white font-bold text-base hover:text-[#c5a47e] transition-colors cursor-pointer text-[13px]">barrosbouw@barrosbouw.nl</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
