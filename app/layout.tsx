@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AOSClient from "@/components/AOSClient";
 import FloatingButtons from "@/components/FloatingButtons"; // 1. Importe o novo componente
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
                 {/* O Footer no final do body */}
                 <Footer />
             </body>
+            <GoogleAnalytics gaId="G-LBWXKMN1HK"/>
         </html>
     );
 }
