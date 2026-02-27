@@ -12,6 +12,9 @@ const galleryData = [
     { id: 7,  src: "/images/comentario4.jpeg" },
     { id: 8,  src: "/images/comentario5.jpeg" },
     { id: 9,  src: "/images/ultima.jpeg" },
+    { id: 10,  src: "/images/pisoAquecido.jpeg" },
+    { id: 11,  src: "/images/pisopisante.jpeg" },
+    { id: 12,  src: "/images/comentario3.jpeg" },
 ];
 
 export default function Gallery() {
@@ -55,15 +58,6 @@ export default function Gallery() {
                             <div className="absolute bottom-0 left-0 w-full h-1 bg-[#c5a47e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-30"></div>
                         </div>
                     ))}
-                </div>
-
-                <div className="mt-16" data-aos="fade-up" data-aos-delay="400">
-                    <Link
-                        href="/galeria"
-                        className="inline-block border border-[#c5a47e] text-[#c5a47e] hover:bg-[#c5a47e] hover:text-black font-bold py-4 px-12 rounded-sm text-sm uppercase tracking-[0.2em] transition duration-500"
-                    >
-                        Portfolio Ontdekken
-                    </Link>
                 </div>
             </div>
         </section>

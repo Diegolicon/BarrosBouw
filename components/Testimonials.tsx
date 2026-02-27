@@ -37,7 +37,7 @@ const testimonialsData = [
         role: "Klant",
         location: "Leiden",
         projectImage: "/images/comentario1.jpeg",
-        review: "Vakmanschap ten top. De renovatie van onze woonkamer is precies geworden zoals we hadden gehoopt. De communicatie was ook uitstekend."
+        review: "Ik was erg onder de indruk van de kwaliteit en de snelheid waarmee het werk werd uitgevoerd. De aandacht voor detail in de afwerking maakt echt een verschil in onze nieuwe badkamer."
     },
     {
         id: 3,
@@ -56,23 +56,7 @@ const testimonialsData = [
         role: "Designer",
         location: "Den Haag",
         projectImage: "/images/comentario2.jpeg",
-        review: "Zeer onder de indruk van de kwaliteit en de snelheid van het werk. De details in de afwerking maken echt het verschil in ons nieuwe kantoor."
-    },
-    {
-        id: 7,
-        name: "Mark van Dijk",
-        role: "Huiseigenaar",
-        location: "Delft",
-        projectImage: "/images/comentario3.jpeg",
-        review: "Betrouwbaar team dat hun afspraken nakomt. De vloer en de muren zien er fantastisch uit. Een absolute aanrader voor elke verbouwing!"
-    },
-    {
-        id: 12,
-        name: "Rick Heinen",
-        role: "Huiseigenaar",
-        location: "Zaandam",
-        projectImage: "/images/pisoAquecido.jpeg",
-        review: "Professionele aanpak en een resultaat dat mag worden gezien. Het team werkt schoon, snel en is erg vriendelijk. Top service!"
+        review: "Een betrouwbaar team dat zijn beloftes nakomt. Het schilderwerk aan de deur is fantastisch geworden. Een echte aanrader voor elke renovatie!"
     },
     {
         id: 4,

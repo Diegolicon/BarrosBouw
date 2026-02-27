@@ -110,7 +110,7 @@ export default function Footer() {
           <p className="text-center md:text-left">
   © 2025 <span className="text-gray-400">Barros Bouw</span> 
   <span className="mx-2 text-gray-700">|</span> 
-  KvK: 12345678. Built for Excellence.
+  KvK: 96981059. Built for Excellence.
 </p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-[#c5a47e] transition-colors tracking-widest">Privacybeleid</a>
