@@ -14,6 +14,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "BARROS BOUW",
+    icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
