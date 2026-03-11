@@ -1,5 +1,3 @@
-// app/layout.tsx
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -7,18 +5,24 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AOSClient from "@/components/AOSClient";
-import FloatingButtons from "@/components/FloatingButtons"; // 1. Importe o novo componente
+import FloatingButtons from "@/components/FloatingButtons";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "BARROS BOUW",
-    description: "Uw partner voor complete renovaties en bouwprojecten.",
+    description: "Uw partner voor complete renovaties en bouwprojecten in Nederland.",
     themeColor: "#000000", 
     alternates: {
         canonical: 'https://barrosbouw.nl',
     },
+    // O Next.js detectará o icon.png automaticamente na pasta app. 
+    // Se quiser garantir, pode adicionar:
+    icons: {
+      icon: '/icon.png',
+      apple: '/icon.png',
+    }
 };
 
 export default function RootLayout({
@@ -27,22 +31,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="nl"> {/* Mudei para 'nl' (holandês) para ajudar no SEO local */}
             <body className={inter.className}>
-                {/* O Navbar fica no topo */}
                 <Navbar />
-                
                 <AOSClient />
-
-                {/* O {children} é o conteúdo da sua página */}
-                <main>
-                    {children}
-                </main>
-
-                {/* 2. BOTÕES FLUTUANTES (Ficam sobrepostos a tudo) */}
+                <main>{children}</main>
                 <FloatingButtons />
-
-                {/* O Footer no final do body */}
                 <Footer />
             </body>
             <GoogleAnalytics gaId="G-LBWXKMN1HK"/>
