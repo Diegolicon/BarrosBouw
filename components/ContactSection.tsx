@@ -63,8 +63,8 @@ export default function ContactSection() {
                   <ContactInfo 
                     icon={<MailIcon />} 
                     label="E-mail" 
-                    value="barrosbouw@gmail.com" 
-                    href="mailto:barrosbouw@gmail.com" 
+                    value="barrosbouw@barrosbouw.nl" 
+                    href="mailto:barrosbouw@barrosbouw.nl" 
                   />
                   <ContactInfo 
                     icon={<MapIcon />} 

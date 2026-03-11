@@ -44,16 +44,16 @@ const servicesData = [
     )
   },
   {
-  title: "Stucwerk & Verlichting",
-  description: "Afwerking in drywall, kooflijsten en lichtplannen die elk detail van de ruimte accentueren.",
-  popular: false,
-  icon: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-    </svg>
-  )
-},
-{
+    title: "Stucwerk & Verlichting",
+    description: "Afwerking in drywall, kooflijsten en lichtplannen die elk detail van de ruimte accentueren.",
+    popular: false,
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    )
+  },
+  {
     title: "Keukens & Badkamers",
     description: "Specialisatie in natte ruimtes met focus op functionaliteit, betegeling en premium afwerking.",
     popular: true,
@@ -71,6 +71,17 @@ const servicesData = [
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    )
+  },
+  {
+    title: "Dakvervanging",
+    description: "Complete vervanging en reparatie van daken voor een veilige, weerbestendige en waterdichte woning.",
+    popular: false,
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 12l9-9 9 9M5 10v10a2 2 0 002 2h10a2 2 0 002-2V10" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 22V12h6v10" />
       </svg>
     )
   },
@@ -101,7 +112,8 @@ export default function Services() {
             </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+        {/* Layout ajustado para lg:grid-cols-3 para formar uma grade 3x3 perfeita com os 9 itens */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
           {servicesData.map((service, index) => (
             <div
               key={index}
