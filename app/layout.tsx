@@ -14,10 +14,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "BARROS BOUW",
-    icons: {
-    icon: '/favicon.ico',
-  },
-    themeColor: "#000000",
+    description: "Uw partner voor complete renovaties en bouwprojecten.",
+    themeColor: "#000000", 
+    alternates: {
+        canonical: 'https://barrosbouw.nl',
+    },
 };
 
 export default function RootLayout({
